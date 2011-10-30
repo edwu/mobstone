@@ -1,7 +1,12 @@
 class UsersController < ApplicationController
+  before_filter :authenticate, :except => [:new, :create]
+  before_filter :correct_user, :only => [:edit, :update]
+  before_filter :signed_in_user,:only => [:new, :create] #prevent signedin user from creating new user?
+  before_filter :admin_user,   :only => [:show, :destroy]
   # GET /users
   # GET /users.xml
   def index
+    @title = "All users"
     @users = User.all
 
     respond_to do |format|
@@ -62,7 +67,7 @@ class UsersController < ApplicationController
 
     respond_to do |format|
       if @user.update_attributes(params[:user])
-        format.html { redirect_to(@user, :notice => 'User was successfully updated.') }
+        format.html { redirect_to(@user, :flash => {:success => 'Profile updated.'}) }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }
@@ -83,4 +88,27 @@ class UsersController < ApplicationController
       format.xml  { head :ok }
     end
   end
+
+  private
+    #deny access in session_helper
+    def authenticate
+      deny_access unless signed_in?
+    end
+
+    #current_user? defined in session_helper
+    def correct_user
+      @user = User.find(params[:id])
+      redirect_to(root_path) unless current_user?(@user)
+    end
+
+    def admin_user
+      redirect_to(root_path) unless current_user.admin?
+    end
+
+    def signed_in_user
+      if signed_in?
+        flash[:info] = "You are already logged in"
+        redirect_to(root_path)
+      end
+    end
 end
