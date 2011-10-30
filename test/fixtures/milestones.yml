@@ -1,0 +1,11 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  deal_id: 1
+  percent: 1
+  people: 1
+
+two:
+  deal_id: 1
+  percent: 1
+  people: 1

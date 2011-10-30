@@ -1,0 +1,19 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  company_id: 1
+  min_price: 1
+  description: MyString
+  org_price: 1
+  expired: false
+  startdate: 2011-10-29 17:57:12
+  duration: 1
+
+two:
+  company_id: 1
+  min_price: 1
+  description: MyString
+  org_price: 1
+  expired: false
+  startdate: 2011-10-29 17:57:12
+  duration: 1
