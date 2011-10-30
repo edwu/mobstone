@@ -1,24 +1,18 @@
 class UsersController < ApplicationController
-  before_filter :authenticate, :except => [:new, :create]
-  before_filter :correct_user, :only => [:edit, :update]
+  before_filter :authenticate, :except => [:show, :new, :create]
+  before_filter :correct_user, :only => [:show, :edit, :update]
   before_filter :signed_in_user,:only => [:new, :create] #prevent signedin user from creating new user?
-  before_filter :admin_user,   :only => [:show, :destroy]
-  # GET /users
-  # GET /users.xml
+  before_filter :admin_user,   :only => [:index, :destroy]
+
+
   def index
     @title = "All users"
-    @users = User.all
-
-    respond_to do |format|
-      format.html # index.html.erb
-      format.xml  { render :xml => @users }
-    end
+    @users = User.paginate(:page => params[:page])
   end
-
   # GET /users/1
   # GET /users/1.xml
   def show
-    @user = User.find(params[:id])
+    @user = User.find(current_user.id)
     @title = @user.name
 
     respond_to do |format|
@@ -42,7 +36,7 @@ class UsersController < ApplicationController
   # GET /users/1/edit
   def edit
     @title = "Edit user"
-    @user = User.find(params[:id])
+    @user = User.find(current_user.id)
   end
 
   # POST /users
@@ -63,11 +57,11 @@ class UsersController < ApplicationController
   # PUT /users/1
   # PUT /users/1.xml
   def update
-    @user = User.find(params[:id])
+    @user = User.find(current_user.id)
 
     respond_to do |format|
       if @user.update_attributes(params[:user])
-        format.html { redirect_to(@user, :flash => {:success => 'Profile updated.'}) }
+        format.html { redirect_to(profile_path, :flash => {:success => 'Profile updated.'}) }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }
@@ -97,7 +91,7 @@ class UsersController < ApplicationController
 
     #current_user? defined in session_helper
     def correct_user
-      @user = User.find(params[:id])
+      @user = User.find(current_user.id)
       redirect_to(root_path) unless current_user?(@user)
     end
 

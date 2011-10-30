@@ -1,14 +1,6 @@
-# create_table "users", :force => true do |t|
-#    t.string   "name"
-#    t.string   "email"
-#    t.integer  "credits"
-#    t.datetime "created_at"
-#    t.datetime "updated_at"
-#  end
-
 class User < ActiveRecord::Base
   attr_accessor :password
-  attr_accessible :name, :email, :password, :password_confirmation, :credits
+  attr_accessible :name, :email, :password, :password_confirmation
 
   email_regex = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
 

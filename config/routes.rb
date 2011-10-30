@@ -8,6 +8,9 @@ Mobstone::Application.routes.draw do
   match '/signin',  :to => 'sessions#new'
   match '/signout', :to => 'sessions#destroy'
 
+  match '/settings', :to => 'users#edit'
+  match '/profile', :to => 'users#show'
+
   resources :vouchers
   resources :milestones
   resources :deals
