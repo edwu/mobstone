@@ -10,12 +10,48 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111030003542) do
+ActiveRecord::Schema.define(:version => 20111030012433) do
+
+  create_table "companies", :force => true do |t|
+    t.string   "name"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "deals", :force => true do |t|
+    t.integer  "company_id"
+    t.integer  "min_price"
+    t.string   "description"
+    t.integer  "org_price"
+    t.boolean  "expired"
+    t.datetime "startdate"
+    t.integer  "duration"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "milestones", :force => true do |t|
+    t.integer  "deal_id"
+    t.integer  "percent"
+    t.integer  "people"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", :force => true do |t|
     t.string   "name"
     t.string   "email"
     t.integer  "credits"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "vouchers", :force => true do |t|
+    t.integer  "deal_id"
+    t.integer  "user_id"
+    t.string   "value"
+    t.boolean  "redeemed"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
