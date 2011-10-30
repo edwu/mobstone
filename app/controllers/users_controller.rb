@@ -14,6 +14,7 @@ class UsersController < ApplicationController
   # GET /users/1.xml
   def show
     @user = User.find(params[:id])
+    @title = @user.name
 
     respond_to do |format|
       format.html # show.html.erb
@@ -35,6 +36,7 @@ class UsersController < ApplicationController
 
   # GET /users/1/edit
   def edit
+    @title = "Edit user"
     @user = User.find(params[:id])
   end
 
@@ -42,15 +44,14 @@ class UsersController < ApplicationController
   # POST /users.xml
   def create
     @user = User.new(params[:user])
-
-    respond_to do |format|
-      if @user.save
-        format.html { redirect_to(@user, :notice => 'User was successfully created.') }
-        format.xml  { render :xml => @user, :status => :created, :location => @user }
-      else
-        format.html { render :action => "new" }
-        format.xml  { render :xml => @user.errors, :status => :unprocessable_entity }
-      end
+    if @user.save
+      sign_in @user
+      flash[:success] = "Welcome to the Sample App!"
+      redirect_to @user
+    else
+      @title = "Sign up"
+      @user.password = @user.password_confirmation = nil
+      render 'new'
     end
   end
 
@@ -75,9 +76,10 @@ class UsersController < ApplicationController
   def destroy
     @user = User.find(params[:id])
     @user.destroy
+    flash[:success] = "User destroyed."
 
     respond_to do |format|
-      format.html { redirect_to(users_url) }
+      format.html { redirect_to(users_path) }
       format.xml  { head :ok }
     end
   end
