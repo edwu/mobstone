@@ -5,7 +5,7 @@ class CreateDeals < ActiveRecord::Migration
       t.integer :min_price
       t.string :description
       t.integer :org_price
-      t.boolean :expired
+      t.boolean :expired,    :default => false
       t.datetime :startdate
       t.integer :duration
 

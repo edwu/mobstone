@@ -1,5 +1,6 @@
 class DealsController < ApplicationController
   before_filter :is_company?, :except => [:index]
+  before_filter :correct_company, :only => [:edit, :update]
   # GET /deals
   # GET /deals.xml
   def index
@@ -40,6 +41,7 @@ class DealsController < ApplicationController
   # GET /deals/1/edit
   def edit
     @deal = Deal.find(params[:id])
+    @company = @deal.company
   end
 
   # POST /deals
@@ -87,3 +89,12 @@ class DealsController < ApplicationController
     end
   end
 end
+
+  private
+    def correct_company   #if user not signed in, can still edit deals?
+      if signed_in?
+        @deal = Deal.find(params[:id])
+        @company = @deal.company
+        redirect_to(root_path) unless current_company?(@company)
+      end
+    end

@@ -46,6 +46,10 @@ module SessionsHelper
   def current_user?(user)
     user == current_user
   end
+
+  def current_company?(company)
+    company.user_id == current_user.id
+  end
   private
 
     def user_from_remember_token

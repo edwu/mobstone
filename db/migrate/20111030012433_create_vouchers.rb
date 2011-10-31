@@ -4,7 +4,7 @@ class CreateVouchers < ActiveRecord::Migration
       t.integer :deal_id
       t.integer :user_id
       t.string :value
-      t.boolean :redeemed
+      t.boolean :redeemed,        :default => false
 
       t.timestamps
     end
