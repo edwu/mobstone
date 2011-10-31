@@ -1,5 +1,3 @@
-<p id="notice"><%= notice %></p>
-
 <p>
   <b>Company:</b>
   <%= @deal.company_id %>
@@ -35,6 +33,7 @@
   <%= @deal.duration %>
 </p>
 
+<% if is_company? %>
+<%= link_to 'Edit', edit_deal_path(@deal) %>
+<% end %>
 
-<%= link_to 'Edit', edit_deal_path(@deal) %> |
-<%= link_to 'Back', deals_path %>

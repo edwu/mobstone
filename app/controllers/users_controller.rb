@@ -43,7 +43,12 @@ class UsersController < ApplicationController
   # POST /users.xml
   def create
     @user = User.new(params[:user])
+
     if @user.save
+      if @user.is_company?
+        @company = Company.create(:name => @user.name, :user_id => @user.id)
+        @company.save
+      end
       sign_in @user
       flash[:success] = "Welcome to the Sample App!"
       redirect_to @user

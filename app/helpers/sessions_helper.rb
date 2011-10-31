@@ -22,6 +22,12 @@ module SessionsHelper
     end
   end
 
+  def is_company?
+    if signed_in?
+      current_user.is_company?
+    end
+  end
+
   def sign_out
     cookies.delete(:remember_token)
     self.current_user = nil

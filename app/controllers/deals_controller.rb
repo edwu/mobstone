@@ -1,9 +1,14 @@
 class DealsController < ApplicationController
+  before_filter :is_company?, :except => [:index]
   # GET /deals
   # GET /deals.xml
   def index
-    @deals = Deal.all
-
+    if is_company?
+      @company = Company.find_by_user_id(current_user.id)
+      @deals = @company.deals
+    else
+      @deals = Deal.all
+    end
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @deals }
@@ -41,10 +46,11 @@ class DealsController < ApplicationController
   # POST /deals.xml
   def create
     @deal = Deal.new(params[:deal])
-
+    @company = Company.find_by_user_id(current_user.id)
+    @deal.company_id = @company.id
     respond_to do |format|
       if @deal.save
-        format.html { redirect_to(@deal, :notice => 'Deal was successfully created.') }
+        format.html { redirect_to(@deal, :flash => {:success => 'Deal successfully created.'}) }
         format.xml  { render :xml => @deal, :status => :created, :location => @deal }
       else
         format.html { render :action => "new" }

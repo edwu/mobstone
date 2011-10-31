@@ -21,4 +21,14 @@ def make_users
                  :password => password,
                  :password_confirmation => password)
   end
+
+  company = User.create!(:name => "Company",
+                          :email => "c@c.com",
+                          :password => "company",
+                          :password_confirmation => "company")
+  company.toggle!(:is_company)
+
+  company1 = Company.create!(:name => company.name,
+                              :user_id => company.id)
+
 end
