@@ -542,21 +542,21 @@ a.action {
 }
 
 #header #socialLinks a.dribbble {
-	background:	transparent url(images/icon_dribbble.png) 0px 0 no-repeat;
+	background:	transparent url(http://themetrust.com/demos/clarity/wp-content/themes/clarity/images/icon_dribbble.png) 0px 0 no-repeat;
 }
 
 #header #socialLinks a.twitter {
-	background:	transparent url(images/icon_twitter.png) 0px 0 no-repeat;
+	background:	transparent url(http://themetrust.com/demos/clarity/wp-content/themes/clarity/images/icon_twitter.png) 0px 0 no-repeat;
 	width: 28px;	
 }
 
 #header #socialLinks a.facebook {
-	background:	transparent url(images/icon_facebook.png) center 0 no-repeat;
+	background:	transparent url(http://themetrust.com/demos/clarity/wp-content/themes/clarity/images/icon_facebook.png) center 0 no-repeat;
 	width: 20px;	
 }
 
 #header #socialLinks a.rss {
-	background:	transparent url(images/icon_rss.png) center 0 no-repeat;
+	background:	transparent url(http://themetrust.com/demos/clarity/wp-content/themes/clarity/images/icon_rss.png) center 0 no-repeat;
 	width: 20px;	
 }
 

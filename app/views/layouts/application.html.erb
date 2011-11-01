@@ -6,17 +6,17 @@
     <%= render 'layouts/stylesheets' %>
     <%= javascript_include_tag :defaults %>
   </head>
-  <body>
-    <div class="container">
+  <body class="archive tax-portfolio term-our-work term-3">
+    <div id="container">
       <%= render 'layouts/header' %>
-      <section class="round">
+      <div id="main">
         <% flash.each do |key, value| %>
           <%= content_tag(:div, value, :class => "flash #{key}") %>
         <% end %>
         <%= yield %>
-      </section>
-      <%= render 'layouts/footer' %>
-      <%= debug(params) if Rails.env.development? %>
-    </div>
+      </div> 	 
+	  <%= render 'layouts/footer' %> 
+    </div>	
+	   
   </body>
 </html>
