@@ -7,10 +7,9 @@ gem 'rails', '3.0.9'
 
 gem 'sqlite3'
 gem 'will_paginate', '3.0.pre2'
-
+gem 'faker', '0.3.1'
 group :development do
   gem 'annotate', '2.4.0'
-  gem 'faker', '0.3.1'
 end
 # Use unicorn as the web server
 # gem 'unicorn'
