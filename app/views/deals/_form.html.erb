@@ -11,6 +11,17 @@
     </div>
   <% end %>
 
+  <%= f.fields_for :milestones do |builder|%>
+	
+	<%= builder.label :people %><br />
+	<%= builder.text_field :people %>
+	
+	<%= builder.label :price %><br />
+	<%= builder.text_field :price %>
+	
+  <% end %>
+	
+
   <div class="field">
     <%= f.label :min_price %><br />
     <%= f.text_field :min_price %>

@@ -33,7 +33,7 @@ ActiveRecord::Schema.define(:version => 20111031025754) do
 
   create_table "milestones", :force => true do |t|
     t.integer  "deal_id"
-    t.integer  "percent"
+    t.integer  "price"
     t.integer  "people"
     t.datetime "created_at"
     t.datetime "updated_at"

@@ -31,6 +31,11 @@ class DealsController < ApplicationController
   # GET /deals/new.xml
   def new
     @deal = Deal.new
+    
+    @deal.milestones.build
+    @deal.milestones.build
+    @deal.milestones.build
+    
 
     respond_to do |format|
       format.html # new.html.erb
