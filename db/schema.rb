@@ -24,7 +24,7 @@ ActiveRecord::Schema.define(:version => 20111031025754) do
     t.integer  "min_price"
     t.string   "description"
     t.integer  "org_price"
-    t.boolean  "expired"
+    t.boolean  "expired",     :default => false
     t.datetime "startdate"
     t.integer  "duration"
     t.datetime "created_at"
@@ -33,7 +33,7 @@ ActiveRecord::Schema.define(:version => 20111031025754) do
 
   create_table "milestones", :force => true do |t|
     t.integer  "deal_id"
-    t.integer  "percent"
+    t.integer  "price"
     t.integer  "people"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -57,7 +57,7 @@ ActiveRecord::Schema.define(:version => 20111031025754) do
     t.integer  "deal_id"
     t.integer  "user_id"
     t.string   "value"
-    t.boolean  "redeemed"
+    t.boolean  "redeemed",   :default => false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
