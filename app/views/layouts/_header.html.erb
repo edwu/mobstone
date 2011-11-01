@@ -13,22 +13,22 @@
 		<div id="mainNav" class="clearfix">
 			<div class="menu-main-nav-container">
     				<ul id="menu-main-nav" class="sf-menu sf-js-enabled sf-shadow">
-      					<li><%= link_to "Home", root_path %></li>
+      					<li><%= link_to "Featured Deals", root_path, :class => "menu-item" %></li>
       					<% if signed_in? %>
-      					<li><%= link_to "Profile", profile_path %></li>
-      					<li><%= link_to "Settings", settings_path %></li>
+      					<li><%= link_to "Profile", profile_path, :class => "menu-item" %></li>
+      					<li><%= link_to "Settings", settings_path, :class => "menu-item" %></li>
       					<% end %>
       					<% if is_admin? %>
-      					<li><%= link_to "Users", users_path %></li>
+      					<li><%= link_to "Users", users_path, :class => "menu-item" %></li>
       					<% end %>
       					<% if is_company? %>
-      					<li><%= link_to "Deals", company_deals_path %></li>
+      					<li><%= link_to "Deals", company_deals_path, :class => "menu-item" %></li>
       					<% end %>
-      					<li><%= link_to "Help", help_path %></li>
+      					<li><%= link_to "Help", help_path, :class => "menu-item" %></li>
       					<% if signed_in? %>
-      					<li><%= link_to "Sign out", signout_path, :method => :delete %></li>
+      					<li><%= link_to "Sign out", signout_path, :class => "menu-item", :method => :delete %></li>
       					<% else %>
-      					<li><%= link_to "Sign in", signin_path %></li>
+      					<li><%= link_to "Sign in", signin_path, :class => "menu-item" %></li>
       					<% end %>
     				</ul>
 			</div>
@@ -56,10 +56,33 @@
 	</div>
 	
 	<div id="mainNav" class="clearfix">							
-		<div class="menu-main-nav-container"><ul id="menu-main-nav" class="sf-menu"><li id="menu-item-32" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-32"><a href="">Featured Deals</a></li>
-<li id="menu-item-31" class="menu-item menu-item-type-taxonomy menu-item-object-portfolio current-menu-item menu-item-31"><a href="">Gallery</a></li>
-<li id="menu-item-36" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-36"><a href="">About Us</a></li>
-</ul></div>			
+		<div class="menu-main-nav-container">
+          <ul id="menu-main-nav" class="sf-menu">
+            <li class="menu-item current-menu-item"><%= link_to "Featured Deals", root_path%></li>
+            <% if signed_in? %>
+                <li class="menu-item"><%= link_to "Profile", profile_path%></li>
+                <li class="menu-item"><%= link_to "Settings", settings_path %></li>
+            <% end %>
+            <% if is_admin? %>
+                <li class="menu-item"><%= link_to "Users", users_path %></li>
+            <% end %>
+            <% if is_company? %>
+                <li class="menu-item"><%= link_to "Deals", company_deals_path %></li>
+            <% end %>
+            <li class="menu-item"><%= link_to "Help", help_path %></li>
+            <li class="menu-item"><%= link_to "About", about_path %></li>
+
+            <% if signed_in? %>
+                <li class="menu-item right-item"><%= link_to "Sign out", signout_path, :method => :delete %></li>
+            <% else %>
+                <li class="menu-item right-item"><%= link_to "Sign in", signin_path %></li>
+            <% end %>
+            <% unless signed_in? %>
+               <li class="menu-item right-item"><%= link_to "Sign up", signup_path %></li>
+            <% end %>
+
+          </ul>
+        </div>
 	</div>
 	
 		

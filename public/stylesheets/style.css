@@ -105,7 +105,7 @@ body {
 
 p {
 	line-height: 1.7em;
-	margin: 0 0 20px 0;	
+	margin: 0;
 }
 
 ul {
@@ -154,8 +154,26 @@ a img {
 h1, h2, h3, h4, h5, h6{
 	color: #696969;
 	font-weight: normal;
+    margin: 0 0 15px;
 }
-
+h1 {
+    font-size: 2.5em;
+}
+h2 {
+    font-size: 2em;
+}
+h3 {
+    font-size: 1.5em;
+}
+h4 {
+    font-size: 1.3em;
+}
+h5 {
+    font-size: 1.2em;
+}
+h6 {
+    font-size: 1.2em;
+}
 
 
 blockquote, address {
@@ -360,8 +378,8 @@ a.action {
 }
 
 #logo img {
-    width: 253px;
-    height:  74px;
+    width: 350px;
+    height:  100px;
 
 }
 
@@ -431,39 +449,10 @@ a.action {
 	color: #696969;	
 }
 
-/* Second level+ dropdowns */
-
-#mainNav ul ul {
-	padding: 20px 0px 0 0px !important;
-	margin-top: -1px;
-	background: #fff;
-	border: 1px solid #dedede;
-	-moz-box-shadow: 0 0px 6px rgba(0,0,0,0.1);
-	-webkit-box-shadow: 0 0px 6px rgba(0,0,0,0.1);
-	box-shadow: 0 0px 6px rgba(0,0,0,0.1);	
+#mainNav ul li.right-item{
+    float: right;
+    margin:  0 0 0 24px;
 }
-
-#mainNav ul ul ul {
-	margin-top: -20px;	
-}
-
-#mainNav ul ul li {	
-	float: none;
-	background: none;	
-	margin: 0 5px 10px 15px !important;		
-}
-
-#mainNav ul ul li a {	
-	font-size: 13px;
-	padding: 0px 0 10px 0;
-	font-weight: normal;
-	border: none !important;
-}
-
-#mainNav ul li.sfHover ul a { color: #9b9b9b!important; }
-
-#mainNav ul li.sfHover ul a:hover { color: #707070!important; }
-
 /** arrow **/
 
 #mainNav .sf-menu a.sf-with-ul {
