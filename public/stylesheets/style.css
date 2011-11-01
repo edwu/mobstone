@@ -359,12 +359,10 @@ a.action {
 	padding: 0;
 }
 
-#logo h1 {
-	margin: 0 !important;
-	line-height: 1em !important;
-	padding: 0 !important;	
-	font-size: 35px;	
-	color: #575757;		
+#logo img {
+    width: 253px;
+    height:  74px;
+
 }
 
 #header h1 {
