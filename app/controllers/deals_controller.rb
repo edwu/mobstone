@@ -108,7 +108,7 @@ class DealsController < ApplicationController
     @deal = Deal.find(params[:id])
     current_user.credits -= @deal.org_price
     
-   @voucher = @deal.vouchers.build(:user_id => current_user.id, :value=>'2339')
+   @voucher = @deal.vouchers.build(:user_id => current_user.id)
     
    respond_to do |format|
      if @voucher.save
