@@ -16,6 +16,7 @@ class User < ActiveRecord::Base
                        :length       => { :within => 6..40 }
 
   has_many :vouchers
+  has_many :deals, :through => :vouchers
 
   before_save :encrypt_password
 

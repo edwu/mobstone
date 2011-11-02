@@ -7,6 +7,7 @@ class DealsController < ApplicationController
     if is_company?
       @company = Company.find_by_user_id(current_user.id)
       @deals = @company.deals
+      @users = @deals.users
     else
       @deals = Deal.all
     end
