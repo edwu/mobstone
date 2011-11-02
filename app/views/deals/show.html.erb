@@ -1,3 +1,5 @@
+
+<%= image_tag("therometer.png", :alt => "Progress Made") %>
 <p>
   <b>Company:</b>
   <%= @deal.company_id %>
@@ -33,23 +35,28 @@
   <%= @deal.duration %>
 </p>
 
-<p>
-  <%= link_to 'Buy Now', buy_deal_path(@deal) %>
-</p>
 
-  <b>Number of users:</b>
+<p>
+<b>Number of users:</b>
   <%= @deal.users.count %>
 </p>
 
 
-Add a therometer picture.
-
 <% if is_company? %>
-    <%= link_to 'Edit', edit_deal_path(@deal) %>
 
+    <p><%= link_to 'Edit', edit_deal_path(@deal) %></p>
+    <b> Milestones </b><br />
     <% @deal.milestones.each do |milestone| %>
       <b>Price: <%= milestone.price %></b>
       <b>People: <%= milestone.people %></b><br />
     <% end %>
+    <br />
+    <b>Vouchers issued:</b> <br />
+    <% @deal.vouchers.each do |voucher| %>
+      <b>Code: <%= voucher.id %></b><br />
+    <% end %>
+<% else %>
+   <p>
+  <%= link_to 'Buy Now', buy_deal_path(@deal) %>
+</p>
 <% end %>
-

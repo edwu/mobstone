@@ -14,7 +14,9 @@
     <th>Expired</th>
     <th>Startdate</th>
     <th>Duration</th>
+    <% if is_company? %>
     <th>Number of users</th>
+    <% end %>
     <th></th>
     <th></th>
     <th></th>
@@ -29,7 +31,9 @@
     <td><%= deal.expired %></td>
     <td><%= deal.startdate %></td>
     <td><%= deal.duration %></td>
+    <% if is_company? %>
     <td><%= deal.users.count %></td>
+        <% end %>
     <td><%= link_to 'Show', deal %></td>
     <td><%= link_to 'Edit', edit_deal_path(deal) %></td>
     <td><%= link_to 'Destroy', deal, :confirm => 'Are you sure?', :method => :delete %></td>

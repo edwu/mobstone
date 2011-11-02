@@ -19,15 +19,15 @@ def make_users
                :password => password,
                :password_confirmation => password)
                
-            User.create!(:name => "ed",
-                            :email => "e@e.com",
-                            :password => password,
-                            :password_confirmation => password)
+  User.create!(:name => "ed",
+                  :email => "e@e.com",
+                  :password => password,
+                  :password_confirmation => password)
                             
-                            User.create!(:name => "connie",
-                                         :email => "co@co.com",
-                                         :password => password,
-                                         :password_confirmation => password)
+  User.create!(:name => "connie",
+               :email => "co@co.com",
+               :password => password,
+               :password_confirmation => password)
   
   99.times do |n|
     name  = Faker::Name.name
