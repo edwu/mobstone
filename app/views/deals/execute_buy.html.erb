@@ -34,10 +34,7 @@
 </p>
 
 <p>
-  <%= link_to 'Buy Now', buy_deal_path(@deal) %>
+  <%= link_to 'Buy Now', purchases_user_path(current_user) %>
 </p>
 
-<% if is_company? %>
-<%= link_to 'Edit', edit_deal_path(@deal) %>
-<% end %>
 

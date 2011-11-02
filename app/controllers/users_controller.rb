@@ -87,6 +87,10 @@ class UsersController < ApplicationController
       format.xml  { head :ok }
     end
   end
+  
+  def purchases
+    
+  end
 
   private
     #deny access in session_helper

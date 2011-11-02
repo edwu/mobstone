@@ -1,0 +1,21 @@
+<% current_user.vouchers.each do |voucher|%>
+<table>
+	<tr>
+    <th>Deal ID</th>
+    <th>Value</th>
+    <th>Redeemed</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+	<tr>
+	    <td><%= link_to 'Show Deal', deal_path(voucher.deal_id) %></td>
+		<td><%= voucher.value %></td>
+	    <td><%= voucher.redeemed %></td>
+	    <td><%= link_to 'Show', voucher %></td>
+	    <td><%= link_to 'Edit', edit_voucher_path(voucher) %></td>
+	    <td><%= link_to 'Destroy', voucher, :confirm => 'Are you sure?', :method => :delete %></td>
+	  </tr>
+	<% end %>
+	</table>
+	</br>

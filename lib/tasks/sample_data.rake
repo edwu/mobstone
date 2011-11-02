@@ -12,6 +12,23 @@ def make_users
                        :password => "foobar",
                        :password_confirmation => "foobar")
   admin.toggle!(:admin)
+  
+  password  = "password"
+  User.create!(:name => "david",
+               :email => "d@d.com",
+               :password => password,
+               :password_confirmation => password)
+               
+            User.create!(:name => "ed",
+                            :email => "e@e.com",
+                            :password => password,
+                            :password_confirmation => password)
+                            
+                            User.create!(:name => "connie",
+                                         :email => "co@co.com",
+                                         :password => password,
+                                         :password_confirmation => password)
+  
   99.times do |n|
     name  = Faker::Name.name
     email = "example-#{n+1}@railstutorial.org"
@@ -30,5 +47,8 @@ def make_users
 
   company1 = Company.create!(:name => company.name,
                               :user_id => company.id)
+  deal = Deal.create(:company_id => company1.id, :min_price => 3, :description => "deal1", 
+                      :org_price => 5, :startdate=>DateTime.current, :duration => 5)
+
 
 end

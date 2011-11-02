@@ -15,9 +15,20 @@ Mobstone::Application.routes.draw do
 
   resources :vouchers
   resources :milestones
-  resources :deals
+  resources :deals do
+    member do
+      get 'buy', 'execute_buy'
+    end
+
+  end
+  
   resources :companies
-  resources :users
+  resources :users do
+    member do
+      get 'purchases'
+    end
+  end
+  
   resources :sessions, :only => [:new, :create, :destroy]
 
   # The priority is based upon order of creation:

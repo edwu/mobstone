@@ -93,6 +93,32 @@ class DealsController < ApplicationController
       format.xml  { head :ok }
     end
   end
+  
+  def buy
+    @deal = Deal.find(params[:id])
+
+    respond_to do |format|
+      format.html # show.html.erb
+      format.xml  { render :xml => @deal }
+    end
+    
+  end 
+  
+  def execute_buy
+    @deal = Deal.find(params[:id])
+    current_user.credits -= @deal.org_price
+    
+   @voucher = @deal.vouchers.build(:user_id => current_user.id, :value=>'2339')
+    
+   respond_to do |format|
+     if @voucher.save
+       format.html { redirect_to(purchases_user_path, :flash => {:success => 'You have successfully purchased the deal!.'}) }
+     else
+       format.html { render :action => "show" }
+       format.xml  { render :xml => @deal.errors, :status => :unprocessable_entity }
+     end
+   end
+  end
 end
 
   private
