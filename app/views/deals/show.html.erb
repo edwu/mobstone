@@ -37,7 +37,19 @@
   <%= link_to 'Buy Now', buy_deal_path(@deal) %>
 </p>
 
+  <b>Number of users:</b>
+  <%= @deal.users.count %>
+</p>
+
+
+Add a therometer picture.
+
 <% if is_company? %>
-<%= link_to 'Edit', edit_deal_path(@deal) %>
+    <%= link_to 'Edit', edit_deal_path(@deal) %>
+
+    <% @deal.milestones.each do |milestone| %>
+      <b>Price: <%= milestone.price %></b>
+      <b>People: <%= milestone.people %></b><br />
+    <% end %>
 <% end %>
 

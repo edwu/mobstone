@@ -16,9 +16,9 @@
 	<%= builder.label :people %><br />
 	<%= builder.text_field :people %>
 	
-	<%= builder.label :price %><br />
-	<%= builder.text_field :price %>
-	
+    <%= builder.label :price %><br />
+    <%= builder.text_field :price %>
+
   <% end %>
 	
 
@@ -35,16 +35,12 @@
     <%= f.text_field :org_price %>
   </div>
   <div class="field">
-    <%= f.label :expired %><br />
-    <%= f.check_box :expired %>
-  </div>
-  <div class="field">
     <%= f.label :startdate %><br />
     <%= f.datetime_select :startdate %>
   </div>
   <div class="field">
     <%= f.label :duration %><br />
-    <%= f.text_field :duration %>
+    <%= f.select :duration, [[7,7],[6,6],[5,5],[4,4],[3,3],[2,2],[1,1]] %>
   </div>
   <div class="actions">
     <%= f.submit %>
