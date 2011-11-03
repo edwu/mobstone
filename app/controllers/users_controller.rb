@@ -13,7 +13,7 @@ class UsersController < ApplicationController
   # GET /users/1.xml
   def show
     @user = User.find(current_user.id)
-    @title = @user.name
+    @title = "Profile"
 
     respond_to do |format|
       format.html # show.html.erb
@@ -35,7 +35,7 @@ class UsersController < ApplicationController
 
   # GET /users/1/edit
   def edit
-    @title = "Edit user"
+    @title = "Settings"
     @user = User.find(current_user.id)
   end
 

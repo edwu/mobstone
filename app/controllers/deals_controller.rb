@@ -4,6 +4,7 @@ class DealsController < ApplicationController
   # GET /deals
   # GET /deals.xml
   def index
+    @title = "Deals"
     if is_company?
       @company = Company.find_by_user_id(current_user.id)
       @deals = @company.deals

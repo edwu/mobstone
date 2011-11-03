@@ -1,40 +1,3 @@
-<!--<div id="header">
-  <div class="inside">
-	<div class="top clearfix">
-		<div id="logo">
-			
-			<%= link_to logo, root_path %>	
-		</div>
-		<div id="socialLinks" class="clearfix">
-			<a class="dribbble" href="http://dribbble.com/"><span>Dribble</span></a>
-			<a class="twitter" href="http://twitter.com/#!/webdesignledger"><span>Twitter</span></a>
-			<a class="facebook" href="http://www.facebook.com/pages/Web-Design-Ledger/119775514709373"><span>Facebook</span></a>
-		</div>
-		<div id="mainNav" class="clearfix">
-			<div class="menu-main-nav-container">
-    				<ul id="menu-main-nav" class="sf-menu sf-js-enabled sf-shadow">
-      					<li><%= link_to "Featured Deals", root_path, :class => "menu-item" %></li>
-      					<% if signed_in? %>
-      					<li><%= link_to "Profile", profile_path, :class => "menu-item" %></li>
-      					<li><%= link_to "Settings", settings_path, :class => "menu-item" %></li>
-      					<% end %>
-      					<% if is_admin? %>
-      					<li><%= link_to "Users", users_path, :class => "menu-item" %></li>
-      					<% end %>
-      					<% if is_company? %>
-      					<li><%= link_to "Deals", company_deals_path, :class => "menu-item" %></li>
-      					<% end %>
-      					<li><%= link_to "Help", help_path, :class => "menu-item" %></li>
-      					<% if signed_in? %>
-      					<li><%= link_to "Sign out", signout_path, :class => "menu-item", :method => :delete %></li>
-      					<% else %>
-      					<li><%= link_to "Sign in", signin_path, :class => "menu-item" %></li>
-      					<% end %>
-    				</ul>
-			</div>
-		</div>
-	</div>
-</div>-->
 <div id="header">
 	<div class="inside">	
 	<div class="top clearfix">
@@ -58,28 +21,28 @@
 	<div id="mainNav" class="clearfix">							
 		<div class="menu-main-nav-container">
           <ul id="menu-main-nav" class="sf-menu">
-            <li class="menu-item current-menu-item"><%= link_to "Featured Deals", root_path%></li>
+            <li class="menu-item <%= @title == "Deals" ? "current-menu-item" : "" %>"><%= link_to "Deals", root_path%></li>
             <% if signed_in? %>
-                <li class="menu-item"><%= link_to "Profile", profile_path%></li>
-                <li class="menu-item"><%= link_to "Settings", settings_path %></li>
-                <li class="menu-item"><%= link_to "Purchases", purchases_path %></li>
+                <li class="menu-item <%= @title == "Profile" ? "current-menu-item" : "" %>"><%= link_to "Profile", profile_path%></li>
+                <li class="menu-item <%= @title == "Settings" ? "current-menu-item" : "" %>"><%= link_to "Settings", settings_path %></li>
+                <% unless is_company? %>
+                <li class="menu-item <%= @title == "Purchases" ? "current-menu-item" : "" %>"><%= link_to "Purchases", purchases_path %></li>
+                <% end %>
             <% end %>
             <% if is_admin? %>
-                <li class="menu-item"><%= link_to "Users", users_path %></li>
+                <li class="menu-item <%= @title == "Users" ? "current-menu-item" : "" %>"><%= link_to "Users", users_path %></li>
             <% end %>
-            <% if is_company? %>
-                <li class="menu-item"><%= link_to "Deals", company_deals_path %></li>
-            <% end %>
-            <li class="menu-item"><%= link_to "Help", help_path %></li>
-            <li class="menu-item"><%= link_to "About", about_path %></li>
+
+            <li class="menu-item <%= @title == "Help" ? "current-menu-item" : "" %>"><%= link_to "Help", help_path %></li>
+            <li class="menu-item <%= @title == "About" ? "current-menu-item" : "" %>"><%= link_to "About", about_path %></li>
 
             <% if signed_in? %>
                 <li class="menu-item right-item"><%= link_to "Sign out", signout_path, :method => :delete %></li>
             <% else %>
-                <li class="menu-item right-item"><%= link_to "Sign in", signin_path %></li>
+                <li class="menu-item right-item <%= @title == "Sign in" ? "current-menu-item" : "" %>"><%= link_to "Sign in", signin_path %></li>
             <% end %>
             <% unless signed_in? %>
-               <li class="menu-item right-item"><%= link_to "Sign up", signup_path %></li>
+               <li class="menu-item right-item <%= @title == "Sign up" ? "current-menu-item" : "" %>"><%= link_to "Sign up", signup_path %></li>
             <% end %>
 
           </ul>

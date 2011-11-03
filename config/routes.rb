@@ -10,8 +10,8 @@ Mobstone::Application.routes.draw do
 
   match '/settings', :to => 'users#edit'
   match '/profile', :to => 'users#show'
-  match '/company/deals', :to => 'deals#index'
-  match '/company/deals/new', :to => 'deals#new'
+#  match '/company/deals', :to => 'deals#company_deal'
+# match '/company/deals/new', :to => 'deals#new'
   match '/purchases', :to => 'users#purchases'
 
   resources :vouchers
