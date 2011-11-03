@@ -89,7 +89,7 @@ class UsersController < ApplicationController
   end
   
   def purchases
-    
+      @title = "Purchases"
   end
 
   private

@@ -112,7 +112,7 @@ class DealsController < ApplicationController
     
    respond_to do |format|
      if @voucher.save
-       format.html { redirect_to(purchases_user_path, :flash => {:success => 'You have successfully purchased the deal!.'}) }
+       format.html { redirect_to(purchases_path, :flash => {:success => 'You have successfully purchased the deal!.'}) }
      else
        format.html { render :action => "show" }
        format.xml  { render :xml => @deal.errors, :status => :unprocessable_entity }
