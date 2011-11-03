@@ -14,6 +14,8 @@ end
 # Use unicorn as the web server
 # gem 'unicorn'
 
+gem 'mini_magick'
+gem  'carrierwave'
 # Deploy with Capistrano
 # gem 'capistrano'
 

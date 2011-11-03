@@ -5,5 +5,7 @@ class Deal < ActiveRecord::Base
   has_many :users, :through => :vouchers
 
   accepts_nested_attributes_for :milestones
+  
+  mount_uploader :image, ImageUploader
 
 end
