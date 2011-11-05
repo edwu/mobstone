@@ -771,7 +771,7 @@ a.action {
 #content .project.small a .title {
 	display: block;
 	display: none;
-	background: transparent url(images/black_alpha_50.png); 
+    background-color: rgba(0,0,0,0.5);
 	color: #FFF;
 	position: absolute;
 	bottom: 0;
