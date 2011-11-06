@@ -37,7 +37,7 @@
     <% if is_company? %>
     <td><%= deal.users.count %></td>
         <% end %>
-    <td><%= link_to 'Show', deal %></td>
+    <td><%= link_to 'Show', deal :rel => "bookmark"%></td>
     <td><%= link_to 'Edit', edit_deal_path(deal) %></td>
     <td><%= link_to 'Destroy', deal, :confirm => 'Are you sure?', :method => :delete %></td>
 
@@ -47,18 +47,14 @@
 
 <br />
            <div id="pageHead">
-			<h1>Our Work</h1>
-			<p>Take a look at our latest and greatest.</p>		</div>
+			<h1>Live Deals</h1>
+			</div>
 <div id="sidebar">
 
 				<ul id="filterNav" class="clearfix">
-					<li class="segment-0"><a href="#" data-filter="*" class="selected">All</a></li>
-					<li><a class="" href="#" data-filter=".animation">Animation</a></li>
-<li><a class="" href="#" data-filter=".illustration">Illustration</a></li>
-<li><a href="#" data-filter=".photography">Photography</a></li>
-<li><a href="#" data-filter=".print">Print</a></li>
-<li><a href="#" data-filter=".web-design">Web Design</a></li>
-
+					<li class="segment-0"><a href="#" data-filter="*">Top Deals</a></li>
+					<li><a class="" href="#" data-filter=".animation">Past Deals</a></li>
+<li><a class="" href="#" data-filter=".illustration">Most Discussed</a></li>
 				</ul>
 
 
@@ -68,8 +64,8 @@
 <div id="projects">
     <div style="overflow: hidden; position: relative; height: 750px;" class="thumbs masonry isotope">
 		<div style="position: absolute; left: 0px; top: 0px; opacity: 1; -moz-transform: scale(1);" class="project small animation   isotope-item">
-			<a href="http://themetrust.com/demos/clarity/?projects=tube-drop" rel="bookmark">
-				<img style="opacity: 1;" src="http://themetrust.com/demos/clarity/wp-content/uploads/2011/06/tube_drop.jpg" class="thumb wp-post-image" alt="Tube Drop" title="" height="286" width="220">						<span style="opacity: 0; display: inline;" class="title"><span>Tube Drop</span></span>
+			<a href="/deals/1" rel="bookmark">
+				<img style="opacity: 1;" src="http://themetrust.com/demos/clarity/wp-content/uploads/2011/06/tube_drop.jpg" class="thumb wp-post-image" alt="Tube Drop" title="" height="286" width="220">						<span style="opacity: 0; display: inline;" class="title"><span>American Apparel</span></span>
 			</a>
 		</div>
         <div style="position: absolute; left: 250px; top: 0px; opacity: 1; -moz-transform: scale(1);" class="project small animation  lightbox isotope-item">
