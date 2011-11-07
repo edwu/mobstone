@@ -310,11 +310,11 @@ a.action {
 	float: left;
 	margin: 0 0px 0 0;
 	position: relative;	
-	width: 720px;
+	width: 800px;
 }
 
 #sidebar {
-	width: 220px;
+	width: 170px;
 	float: right;
 	margin: 0;
 	padding: 0 0 0 0;		
@@ -549,7 +549,7 @@ a.action {
 #content {
 	margin: 0 0 20px 0px;
 	padding: 0 0 0 0 !important;
-	width: 970px;
+	width: 800px;
 }
 
 #content.full{	
@@ -653,9 +653,9 @@ a.action {
 }
 
 #pageHead {		
-	padding: 10px 0 10px 0;	
-	margin: 0 0 30px 0;
-	border-bottom: 1px solid #e4e4e4;
+	padding: 5px 0 5px 0;
+	margin: 0 0 10px 0;
+
 }
 
 #pageHead h1 {	
@@ -691,7 +691,7 @@ a.action {
 #portfolioNav li a{
 	font-size: 12px;	
 	background: #f3f3f3;	
-	display: inline-block;	
+	display: inline-block;
 	text-decoration: none;
 	position: relative;		
 	padding: 0 6px 0 !important;	
@@ -729,6 +729,30 @@ a.action {
 #filterNav {
 	margin-bottom: 30px!important;
 	display: block;	
+}
+
+#filterNav li a {
+    background: none repeat scroll 0 0 #F0F0F0;
+    border: medium none;
+    border-radius: 3px 3px 3px 3px;
+    color: #7D7D7B !important;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 11px;
+    line-height: 20px;
+    padding: 0 6px !important;
+    position: relative;
+    text-decoration: none;
+}
+
+#filterNav li a:hover {
+    background: none repeat scroll 0 0 #6A6A6A;
+    color: #FFFFFF !important;
+}
+
+#filterNav .selected {
+    background: none repeat scroll 0 0 #6A6A6A;
+    color: #FFFFFF !important;
 }
 
 .thumbs {
@@ -1132,6 +1156,18 @@ a.button, #footer a.button {
 	margin: 0 20px 15px 0 !important;
 	padding-top: 3px;
 }
+
+#categories {
+    display: block;
+    position: relative;
+}
+
+#categories li {
+    background: none repeat scroll 0 0 transparent;
+    display: inline-block;
+    padding: 0;
+}
+
 
 /*///////////////////////////////////////////////////////////////////// 
 //  09 - Widgets

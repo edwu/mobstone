@@ -45,6 +45,10 @@
     <%= f.label :duration %><br />
     <%= f.select :duration, [["7 days",7],["6 days",6],["5 days",5],["4 days",4],["3 days",3],["2 days",2],["1 day",1]] %>
   </div>
+    <div class="field">
+    <%= f.label :category %><br />
+    <%= f.select :category, [["Other","other"],["Clothing","clothing"],["Sport Supplies","sportsupplies"],["Gourmet","gourmet"]] %>
+  </div>
   <div class="actions">
     <%= f.submit %>
   </div>

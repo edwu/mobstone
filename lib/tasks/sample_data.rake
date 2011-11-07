@@ -47,8 +47,6 @@ def make_users
 
   company1 = Company.create!(:name => company.name,
                               :user_id => company.id)
-  deal = Deal.create(:company_id => company1.id, :min_price => 3, :description => "deal1", 
-                      :org_price => 5, :startdate=>DateTime.current, :duration => 5, :image => "rails.png")
 
 
 end

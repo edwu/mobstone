@@ -1,7 +1,10 @@
 
 
            <div id="pageHead">
-			<h1>Live Deals</h1>
+
+                <% if is_company? %>
+                    <%= link_to 'New Deal', new_deal_path %>
+                <% end %>
 			</div>
 <!--<div id="sidebar">
 				<ul id="filterNav" class="clearfix">
@@ -10,75 +13,48 @@
 <li><a class="" href="#" data-filter=".illustration">Most Discussed</a></li>
 				</ul>
 	</div>-->
+                    <div id ="sidebar">
+                      <h1>Live Deals</h1>
+           <ul id="filterNav" class="clearfix">
+					<li class="segment-0"><a href="#" data-filter="*" class="selected">All Deals</a></li>
+					<li><a href="#" data-filter=".clothing">Clothing</a></li>
+
+<li><a href="#" data-filter=".sportsupplies">Sport Supplies</a></li>
+<li><a href="#" data-filter=".gourmet">Gourmet</a></li>
+
+
+				</ul>
+           </div>
 <div id="content" class="threeFourth clearfix">
 
 <div id="projects">
-    <div style="overflow: hidden; position: relative; min-height: 450px;" class="thumbs masonry isotope">
-		<div style=" opacity: 1; -moz-transform: scale(1);" class="project small animation   isotope-item thumbnail thumbnail-with-margin">
-			<a href="/deals/1" rel="bookmark">
-				<img style="opacity: 1;" src="http://themetrust.com/demos/clarity/wp-content/uploads/2011/06/tube_drop.jpg" class="thumb wp-post-image" alt="Tube Drop" title="" >
+  <div style="overflow: hidden; position: relative; min-height: 450px;" class="thumbs masonry isotope">
+         <% if @deals.empty? and is_company? %>
+             <p>You currently have no deals. <%= link_to 'Click here', new_deal_path %> to create a new deal.</p>
+        <% elsif @deals.empty?%>
+            <p>There are currently no live deals. Please check back later!</p>
+        <% end %>
+  <% @deals.each do |deal| %>
+
+		<div style=" opacity: 1; -moz-transform: scale(1);" class="project small <%= deal.category %> isotope-item thumbnail thumbnail-with-margin">
+			<a href="/deals/<%= deal.id %>" rel="bookmark">
+				<img style="opacity: 1;" src="<%= deal.image_url.to_s %>" class="thumb wp-post-image" alt="Tube Drop">
               <span style="opacity: 0; display: inline;" class="title">
-                <span>American Apparel</span>
+                <span><%= deal.description %></span>
               </span>
 			</a>
 		</div>
-       <div style=" opacity: 1; -moz-transform: scale(1);" class="project small animation   isotope-item thumbnail thumbnail-with-margin">
-			<a href="/deals/1" rel="bookmark">
-				<img style="opacity: 1;" src="http://themetrust.com/demos/clarity/wp-content/uploads/2011/06/tube_drop.jpg" class="thumb wp-post-image" alt="Tube Drop" title="" >
-              <span style="opacity: 0; display: inline;" class="title">
-                <span>American Apparel</span>
-              </span>
-			</a>
-		</div>
-      <div style=" opacity: 1; -moz-transform: scale(1);" class="project small animation   isotope-item thumbnail thumbnail-with-margin">
-			<a href="/deals/1" rel="bookmark">
-				<img style="opacity: 1;" src="http://themetrust.com/demos/clarity/wp-content/uploads/2011/06/tube_drop.jpg" class="thumb wp-post-image" alt="Tube Drop" title="" >
-              <span style="opacity: 0; display: inline;" class="title">
-                <span>American Apparel</span>
-              </span>
-			</a>
-		</div>
-      <div style=" opacity: 1; -moz-transform: scale(1);" class="project small animation   isotope-item thumbnail">
-			<a href="/deals/1" rel="bookmark">
-				<img style="opacity: 1;" src="http://themetrust.com/demos/clarity/wp-content/uploads/2011/06/tube_drop.jpg" class="thumb wp-post-image" alt="Tube Drop" title="" >
-              <span style="opacity: 0; display: inline;" class="title">
-                <span>American Apparel</span>
-              </span>
-			</a>
-		</div>
-      <div style=" opacity: 1; -moz-transform: scale(1);" class="project small animation   isotope-item thumbnail thumbnail-with-margin">
-			<a href="/deals/1" rel="bookmark">
-				<img style="opacity: 1;" src="http://themetrust.com/demos/clarity/wp-content/uploads/2011/06/tube_drop.jpg" class="thumb wp-post-image" alt="Tube Drop" title="" >
-              <span style="opacity: 0; display: inline;" class="title">
-                <span>American Apparel</span>
-              </span>
-			</a>
-		</div>
-      <div style=" opacity: 1; -moz-transform: scale(1);" class="project small animation   isotope-item thumbnail thumbnail-with-margin">
-			<a href="/deals/1" rel="bookmark">
-				<img style="opacity: 1;" src="http://themetrust.com/demos/clarity/wp-content/uploads/2011/06/tube_drop.jpg" class="thumb wp-post-image" alt="Tube Drop" title="" >
-              <span style="opacity: 0; display: inline;" class="title">
-                <span>American Apparel</span>
-              </span>
-			</a>
-		</div>
-      <div style=" opacity: 1; -moz-transform: scale(1);" class="project small animation   isotope-item thumbnail thumbnail-with-margin">
-			<a href="/deals/1" rel="bookmark">
-				<img style="opacity: 1;" src="http://themetrust.com/demos/clarity/wp-content/uploads/2011/06/tube_drop.jpg" class="thumb wp-post-image" alt="Tube Drop" title="" >
-              <span style="opacity: 0; display: inline;" class="title">
-                <span>American Apparel</span>
-              </span>
-			</a>
-		</div>
+
+      <% end %>
+
+
 
 	</div>
 </div>
 
 </div>
 
-           <% if is_company? %>
-<%= link_to 'New Deal', new_deal_path %>
-<% end %>
+
 
 <h1>Listing deals</h1>
 
@@ -122,5 +98,4 @@
 <% end %>
 </table>
 
-<br />
 
