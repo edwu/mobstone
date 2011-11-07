@@ -21,11 +21,9 @@
 
 		</div>
 		<div class='col_3'>
-			<div class='user-actions'>
-			
-			  <b>Bid Time Remaining:</b>
-			  <%= @remaining_time %>
+			<div  id='countDownTimer'>
 			</div>
+			
 
 			<div class='user-actions'>
 				<%= button_to 'Bid', buy_deal_path(@deal), :form_class => 'btn primary'%>
@@ -55,6 +53,25 @@
 
 </div>
 
+<script>
+jQuery(document).ready(function(){
+	    var year = <%= @expire_time.year %>;
+	    var month = <%= @expire_time.month %>;
+	    var day = <%= @expire_time.day %>;
+	    var hour = <%= @expire_time.hour %>;
+	    var minute = <%= @expire_time.minute %>;
+	    var second = <%= @expire_time.second %>;
+	
+	
+	    var dealEndDate = new Date(); 
+	    dealEndDate = new Date(year, month-2, day, hour, minute-26, second-30); 
+		var expireURL = window.location.host + '/deal'
+		
+		jQuery('#countDownTimer').countdown({until: dealEndDate, expiryUrl:expireURL})
+})
+
+
+</script>
 
 <p>
   <b>Min price:</b>
@@ -74,10 +91,23 @@
 
 <p>
   <b>Startdate:</b>
-  <%= @deal.startdate %>
+  <%= @deal.startdate.to_datetime %>
 </p>
 
+<p>
+  <b>Expire Time:</b>
+  <%= @expire_time.to_datetime %>
+</p>
 
+<p>
+  <b>Duration:</b>
+  <%= @deal.duration %>
+</p>
+
+<p>
+  <b>Time now:</b>
+  <%= DateTime.now %>
+</p>
 
 
 <p>

@@ -21,6 +21,11 @@ class DealsController < ApplicationController
   # GET /deals/1.xml
   def show
     @deal = Deal.find(params[:id])
+    
+    @current_price = '10.00'
+    
+    @expire_time = @deal.startdate.to_datetime + 30 #(@deal.startdate.to_date + @deal.duration).to_datetime
+    puts @expire_time
 
     respond_to do |format|
       format.html # show.html.erb
