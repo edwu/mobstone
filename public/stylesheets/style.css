@@ -417,7 +417,8 @@ a.action {
 	line-height: 25px;	
 	color: #bababa;
 	border-top: 3px solid #fff;	
-	padding: 10px 0 10px 0;		
+	padding: 10px 0 10px 0;
+    font-weight: bold;
 }
 
 #mainNav ul ul a{
