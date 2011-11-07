@@ -10,35 +10,36 @@
       </ul>
     </div>
   <% end %>
-
+    <div class="milestone">
   <%= f.fields_for :milestones do |builder|%>
-	
-	<%= builder.label :people %><br />
-	<%= builder.text_field :people %>
-	
-    <%= builder.label :price %><br />
-    <%= builder.text_field :price %>
+
+        <%= builder.label "Number of People" %><br />
+        <%= builder.text_field :people %><br />
+
+        <%= builder.label :price %><br />
+        <%= builder.text_field :price %><br />
 
   <% end %>
-	
+	      </div>
 
   <div class="field">
-    <%= f.label :min_price %><br />
+    <%= f.label "Minimum Price"%><br />
     <%= f.text_field :min_price %>
+  </div>
+  <div class="field">
+    <%= f.label "Original Price" %><br />
+    <%= f.text_field :org_price %>
   </div>
   <div class="field">
     <%= f.label :description %><br />
     <%= f.text_field :description %>
   </div>
   <div class="field">
-    <%= f.label :org_price %><br />
-    <%= f.text_field :org_price %>
+    <%= f.label "Deal Image" %><br />
+ <%= f.file_field :image %><br />
   </div>
   <div class="field">
-    <%= f.file_field :image %><br />
-  </div>
-  <div class="field">
-    <%= f.label :startdate %><br />
+    <%= f.label "Start Date" %><br />
     <%= f.datetime_select :startdate %>
   </div>
   <div class="field">

@@ -22,22 +22,21 @@
 		<div class="menu-main-nav-container">
           <ul id="menu-main-nav" class="sf-menu">
             <li class="menu-item <%= @title == "Deals" ? "current-menu-item" : "" %>"><%= link_to "Deals", root_path%></li>
-            <% if signed_in? %>
-                <li class="menu-item <%= @title == "Profile" ? "current-menu-item" : "" %>"><%= link_to "Profile", profile_path%></li>
-                <li class="menu-item <%= @title == "Settings" ? "current-menu-item" : "" %>"><%= link_to "Settings", settings_path %></li>
-                <% unless is_company? %>
-                <li class="menu-item <%= @title == "Purchases" ? "current-menu-item" : "" %>"><%= link_to "Purchases", purchases_path %></li>
-                <% end %>
-            <% end %>
             <% if is_admin? %>
                 <li class="menu-item <%= @title == "Users" ? "current-menu-item" : "" %>"><%= link_to "Users", users_path %></li>
             <% end %>
 
-            <li class="menu-item <%= @title == "Help" ? "current-menu-item" : "" %>"><%= link_to "Help", help_path %></li>
+            <!--<li class="menu-item <%= @title == "Help" ? "current-menu-item" : "" %>"><%= link_to "Help", help_path %></li>  -->
             <li class="menu-item <%= @title == "About" ? "current-menu-item" : "" %>"><%= link_to "About", about_path %></li>
 
             <% if signed_in? %>
+
                 <li class="menu-item right-item"><%= link_to "Sign out", signout_path, :method => :delete %></li>
+                <li class="menu-item right-item <%= @title == "Profile" ? "current-menu-item" : "" %>"><%= link_to current_user.name, profile_path%></li>
+                <li class="menu-item right-item <%= @title == "Settings" ? "current-menu-item" : "" %>"><%= link_to "Settings", settings_path %></li>
+                <% unless is_company? %>
+                <li class="menu-item right-item <%= @title == "Purchases" ? "current-menu-item" : "" %>"><%= link_to "Purchases", purchases_path %></li>
+            <% end %>
             <% else %>
                 <li class="menu-item right-item <%= @title == "Sign in" ? "current-menu-item" : "" %>"><%= link_to "Sign in", signin_path %></li>
             <% end %>
