@@ -1,23 +1,66 @@
+<%= stylesheet_link_tag 'columnal/columnal' %>
+<%= stylesheet_link_tag 'columnal/custom' %>
 
-<%= image_tag("therometer.png", :alt => "Progress Made") %>
-<p>
-  <b>Company:</b>
-  <%= @deal.company_id %>
-</p>
 
-<p>
-  <%= image_tag @deal.image_url.to_s %>
-</p>
+<%= stylesheet_link_tag 'twitter_bootstrap.min' %>
+
+<div class='container'>
+	
+	<div class='row'>
+		<div class='col_12'>
+			<h1>
+			  <b>Company:</b>
+			  <%= @deal.company_id %>
+			</h1>
+		</div>
+	</div>
+	
+	<div class='row'>
+		<div class='col_3'>
+			<%= image_tag("therometer.png", :alt => "Progress Made") %>
+
+		</div>
+		<div class='col_3'>
+			<div class='user-actions'>
+			
+			  <b>Bid Time Remaining:</b>
+			  <%= @remaining_time %>
+			</div>
+
+			<div class='user-actions'>
+				<%= button_to 'Bid', buy_deal_path(@deal), :form_class => 'btn primary'%>
+			</div>
+			
+			<div class='user-actions'>
+				<%= button_to 'Bid', buy_deal_path(@deal), :form_class => 'btn primary'%>
+			</div>
+		</div>
+		<div class='col_6 last'>
+			<p id='current-price'>
+				<b>Current Price:</b>
+				<%= @current_price %>	
+			</p>
+			
+			<div id='main-description'>
+			  <%= image_tag @deal.image_url.to_s %>
+			
+
+				<p>
+				  <b>Description:</b>
+				  <%= @deal.description %>
+				</p>
+			</div>
+		</div>
+		
+
+</div>
+
 
 <p>
   <b>Min price:</b>
   <%= @deal.min_price %>
 </p>
 
-<p>
-  <b>Description:</b>
-  <%= @deal.description %>
-</p>
 
 <p>
   <b>Org price:</b>
@@ -34,10 +77,7 @@
   <%= @deal.startdate %>
 </p>
 
-<p>
-  <b>Duration:</b>
-  <%= @deal.duration %>
-</p>
+
 
 
 <p>
