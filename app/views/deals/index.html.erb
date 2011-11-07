@@ -28,7 +28,7 @@
 <div id="content" class="threeFourth clearfix">
 
 <div id="projects">
-  <div style="overflow: hidden; position: relative; min-height: 450px;" class="thumbs masonry isotope">
+  <div style="overflow: hidden; position: relative; " class="thumbs masonry isotope">
          <% if @deals.empty? and is_company? %>
              <p>You currently have no deals. <%= link_to 'Click here', new_deal_path %> to create a new deal.</p>
         <% elsif @deals.empty?%>
@@ -55,7 +55,7 @@
 </div>
 
 
-
+   <!--
 <h1>Listing deals</h1>
 
 <table>
@@ -96,6 +96,6 @@
 
   </tr>
 <% end %>
-</table>
+</table>  -->
 
 

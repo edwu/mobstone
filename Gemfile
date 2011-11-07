@@ -15,7 +15,7 @@ end
 # gem 'unicorn'
 
 gem 'mini_magick'
-gem  'carrierwave'
+gem 'carrierwave'
 # Deploy with Capistrano
 # gem 'capistrano'
 

@@ -100,7 +100,6 @@ body {
 	margin: 0;
 	color: #7d7d7b;	
 	background-color: #f3f2f2;
-	border-top: 5px solid #ffd800;	
 }
 
 p {
@@ -224,7 +223,7 @@ pre {
 	color: #b0b0ad !important;
 }
 
-input[type="text"], textarea {
+input[type="text"],input[type="password"], textarea {
 	background-color: #fafafa;	
 	padding: 10px;
 	font-family: "Droid Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -236,7 +235,7 @@ input[type="text"], textarea {
 	background:	#fafafa url(images/field_bkg.png) repeat-x;	
 }
 
-input[type="text"]:focus {outline: none; background-color: #f7f7f7;}
+input[type="text"]:focus,input[type="password"]:focus {outline: none; background-color: #f7f7f7;}
 textarea:focus {outline: none; background-color: #f7f7f7;}
 
 textarea { width: 500px; font-size: 13px;}
@@ -287,7 +286,8 @@ a.action {
 #main .wrap {
 	width: 970px;
 	margin: 0 auto;
-	padding: 0 0 0 0;		
+	padding: 0 0 0 0;
+    margin-bottom: 20px;
 }
 
 .home #main .wrap {
@@ -672,6 +672,21 @@ a.action {
 	padding: 10px 0 0 0!important;	
 	color: #b2b2b2;			
 	line-height: 1em;
+}
+/*About Page------------------*/
+div.two_column .left {
+    float: left;
+    width: 49%;
+    padding-right: 5px;
+}
+div.two_column .right {
+    float: right;
+    width: 50%;
+}
+
+.content1 {
+    margin-bottom: 20px;
+
 }
 
 /*Portfolio Navigation------------------*/
