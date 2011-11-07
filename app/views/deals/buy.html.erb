@@ -65,7 +65,8 @@
  </div>
  <div id="product" width=100%>
 	<div id="image" width=40% style="float:left; padding-bottom:40px; position: relative; left: 100px;">
-		<img src="http://themetrust.com/demos/clarity/wp-content/uploads/2011/06/andrew_jackson_big-220x220.jpg">	
+      <%= image_tag(@deal.image_url.to_s) %>
+
 	</div>
 	<div id="confirmation" width=60% style="float:right;">
 		<div id="total" width=100% style="position: relative; top:10px; right: 200px; font-family:Helvetica, Arial, sans-serif; font-size:24px; padding:10px 10px 10px 10px; text-align:center;">
