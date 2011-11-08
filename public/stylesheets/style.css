@@ -647,18 +647,17 @@ a.action {
 #summary .checkout {
 	height: 35px;
 	text-align: center;
-	padding: 15px 15px 0px 0px;
+	padding: 15px 15px 10px 10px;
 }
 
 #summary .data {
-	height: 180px;
 	text-align:center;
-	padding: 15px 30px 0px 0px;
+	padding: 15px 30px 10px 10px;
 	background-color: #faf9f9;
 }
 
 #pageHead {		
-	padding: 5px 0 5px 0;
+	padding: 5px 10px 5px 0;
 	margin: 0 0 10px 0;
 
 }
@@ -1792,3 +1791,28 @@ ol#commentslist {
 #footer .secondary .right {
 	float: right;
 }
+
+.layer1 {
+margin: 0;
+width: 275px;
+padding-bottom: 20px;
+}
+ 
+#faq .heading {
+	margin: 1px;
+	padding: 3px 10px;
+	cursor: pointer;
+	position: relative;
+	border-style: dashed; 
+	border-color: #CC0000; 
+	background-color: #cee4d8; 
+	font-family:Helvetica, Arial, sans-serif; 
+	font-size:12px;
+}
+
+#faq .content {
+	padding: 5px 10px;
+	background-color:#fafafa;
+}
+
+#faq p { padding: 5px 0; }

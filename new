@@ -1,0 +1,19 @@
+<html>
+<head></head>
+<body>
+<script language="JavaScript" type="text/javascript"> function doMenu(item) { obj=document.getElementById(item); col=document.getElementById("x" + item); if (obj.style.display=="none") { obj.style.display="block"; col.innerHTML="[-]"; } else { obj.style.display="none"; col.innerHTML="[+]"; } } </script>
+
+<a href="java script:doMenu('main');" id=xmain>[+]</a>October 2008
+<div id=main style="margin-left:1em">
+Item 1<br>
+Item 2<br>
+Item 3<br>
+</div>
+<a href="java script:doMenu('main2');" id=xmain2>[+]</a>November 2008
+<div id=main2 style="margin-left:1em">
+Item 1<br>
+Item 2<br>
+Item 3<br>
+</div>
+</body>
+</html>
