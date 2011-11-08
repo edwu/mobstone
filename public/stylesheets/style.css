@@ -1757,8 +1757,8 @@ ol#commentslist {
 
 .layer1 {
 margin: 0;
-width: 275px;
-padding-bottom: 20px;
+width: 250px;
+padding-bottom: 60px;
 }
  
 #faq .heading {
@@ -1768,8 +1768,9 @@ padding-bottom: 20px;
 	position: relative;
 	border-style: dashed; 
 	border-color: #CC0000; 
-	background-color: #cee4d8; 
+	background-color: #f0f0f0; 
 	font-family:Helvetica, Arial, sans-serif; 
+	color:#696969;
 	font-size:12px;
 }
 

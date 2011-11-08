@@ -102,6 +102,7 @@ class DealsController < ApplicationController
   
   def buy
     @deal = Deal.find(params[:id])
+    @company = Company.find(@deal.company_id)
 
     respond_to do |format|
       format.html # show.html.erb
