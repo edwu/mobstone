@@ -16,6 +16,8 @@ Mobstone::Application.routes.draw do
   match '/purchases', :to => 'users#purchases'
   match '/test', :to => 'pages#test'
 
+  match 'uploads/*path', to: 'uploads#show'
+
   resources :vouchers
   resources :milestones
   resources :deals do
