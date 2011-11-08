@@ -5,18 +5,22 @@
     <th>Deal ID</th>
     <th>Value</th>
     <th>Redeemed</th>
-    <th></th>
-    <th></th>
-    <th></th>
+
   </tr>
 	<tr>
 	    <td><%= link_to 'Show Deal', deal_path(voucher.deal_id) %></td>
 		<td><%= voucher.id %></td>
 	    <td><%= voucher.redeemed %></td>
-	    <td><%= link_to 'Show', voucher %></td>
+	<!--    <td><%= link_to 'Show', voucher %></td>
 	    <td><%= link_to 'Edit', edit_voucher_path(voucher) %></td>
-	    <td><%= link_to 'Destroy', voucher, :confirm => 'Are you sure?', :method => :delete %></td>
+	    <td><%= link_to 'Destroy', voucher, :confirm => 'Are you sure?', :method => :delete %></td>   -->
 	  </tr>
 	<% end %>
 	</table>
 	</br>
+
+<p>How should the vouchers and stuff be displayed?</p>
+<p> Don't displayed </p>
+<p> Redeemed - the ones you used </p>
+  <p>Redeemed- deal is expired, but haven't redeemed yet</p>
+  <p>pending - deal isn't over yet</p>

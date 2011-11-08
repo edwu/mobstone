@@ -692,6 +692,43 @@ div.two_column .right {
     margin-bottom: 20px;
 
 }
+/*Thermometer----------*/
+#people {
+    position: absolute;
+    bottom: 0px;
+    left: 57px;
+     height: 50px;
+    width: 28px;
+}
+
+#arrow {
+    background: transparent url(/images/arrow.png) left bottom no-repeat;
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    bottom: 11px;
+    left: 0px;
+}
+#thermometer {
+    position: relative;
+    height: 500px;
+    width: 200px;
+    background: transparent url(/images/thermometer.png) left bottom no-repeat;
+}
+#thermometer .left{
+    background-color: #8AB799;
+
+
+}
+#thermometer .right{
+    width: 50%;
+}
+#thermometer .milestone {
+    padding: 0;
+    margin: 0;
+    width: 100px;
+    height: 50px;
+}
 
 /*Portfolio Navigation------------------*/
 

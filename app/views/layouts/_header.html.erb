@@ -9,13 +9,9 @@
 		</div>
 		
 		<div id="socialLinks" class="clearfix">
-			 
 				<a class="twitter" href="https://twitter.com/#!/mobstone_cal" style="opacity: 0.5;"><span>Twitter</span></a>
-						
-
 				<a class="facebook" href="http://www.facebook.com/pages/MobStone/279977025366994" style="opacity: 0.5;"><span>Facebook</span></a>
-						
-					</div>				
+	    </div>
 	</div>
 	
 	<div id="mainNav" class="clearfix">							
@@ -35,8 +31,8 @@
                 <li class="menu-item right-item <%= @title == "Profile" ? "current-menu-item" : "" %>"><%= link_to current_user.name, profile_path%></li>
                 <li class="menu-item right-item <%= @title == "Settings" ? "current-menu-item" : "" %>"><%= link_to "Settings", settings_path %></li>
                 <% unless is_company? %>
-                <li class="menu-item right-item <%= @title == "Purchases" ? "current-menu-item" : "" %>"><%= link_to "Purchases", purchases_path %></li>
-            <% end %>
+                    <li class="menu-item right-item <%= @title == "Purchases" ? "current-menu-item" : "" %>"><%= link_to "Purchases", purchases_path %></li>
+                <% end %>
             <% else %>
                 <li class="menu-item right-item <%= @title == "Sign in" ? "current-menu-item" : "" %>"><%= link_to "Sign in", signin_path %></li>
             <% end %>

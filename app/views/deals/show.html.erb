@@ -125,7 +125,7 @@ jQuery(document).ready(function(){
       <b>People: <%= milestone.people %></b><br />
     <% end %>
     <br />
-    <b>Vouchers issued:</b> <br />
+    <b>Vouchers issued:</b><br />
     <% @deal.vouchers.each do |voucher| %>
       <b>Code: <%= voucher.id %></b><br />
     <% end %>
@@ -134,3 +134,6 @@ jQuery(document).ready(function(){
   <%= link_to 'Buy Now', buy_deal_path(@deal) %>
 </p>
 <% end %>
+
+
+
