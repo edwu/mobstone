@@ -46,8 +46,8 @@
  <div id="pageHead">
 	<h1>Checkout Summary</h1>
  </div>
- <div id="checkout" width=100% style="padding-bottom: 40px;">
-	<table id="summary" style="border-radius:15px; border-style: dashed; border-color: #CC0000; background-color: #cee4d8; font-family:Helvetica, Arial, sans-serif; font-size:20px;">
+ <div id="checkout" style="float:left; width:70%; padding-top:10px;">
+	<table id="summary" style="border-radius:15px; border-style: dashed; border-color: #CC0000; background-color: #cee4d8; font-family:Helvetica, Arial, sans-serif; font-size:16px;">
 	<tr class="checkout">
 	<td class="checkout">Company</td>
 	<td class="checkout">Purchase Price</td>
@@ -62,27 +62,46 @@
 	</tr>
 	</table>
 
- </div>
- <div id="product" width=100%>
-	<div id="image" width=40% style="float:left; padding-bottom:40px; position: relative; left: 100px;">
-      <%= image_tag(@deal.image_url.to_s) %>
-
+	<div id="image" width=40% style="float:left; padding-top: 40px; padding-bottom:40px; position: relative; left: 50px;">
+		<img src="http://www.newburycomics.com/images/bmh/BU/103-0149312NEWBU.jpg">
+		<!--<%= image_tag(@deal.image_url.to_s) %>-->
 	</div>
 	<div id="confirmation" width=60% style="float:right;">
-		<div id="total" width=100% style="position: relative; top:10px; right: 200px; font-family:Helvetica, Arial, sans-serif; font-size:24px; padding:10px 10px 10px 10px; text-align:center;">
+		<div id="total" width=100% style="position: relative; top:40px; right: 20px; font-family:Helvetica, Arial, sans-serif; font-size:24px; padding:10px 10px 10px 10px; text-align:center;">
 			Total: $<%= @deal.min_price %>
 		</div>
 		<div id="purchase" width=100% style="border:2px solid;
-		border-radius:25px; position: relative; top:20px; right: 200px; font-family:Helvetica, Arial, sans-serif; font-size:24px; padding:10px 10px 10px 10px; background-color: black; font-color:#faf9f9; text-align:center;">
+		border-radius:25px; position: relative; top:50px; right: 20px; font-family:Helvetica, Arial, sans-serif; font-size:24px; padding:10px 10px 10px 10px; background-color: black; font-color:#faf9f9; text-align:center;">
 			<%= link_to 'Purchase', execute_buy_deal_path(@deal) %>
 		</div>
-		<div id="blurb" style="position: relative; top:30px; right: 200px; font-family:Helvetica, Arial, sans-serif; font-size:10px; padding:10px 10px 10px 10px; text-align:center;">
+		<div id="blurb" width=100% style="position: relative; top:60px; right: 20px; font-family:Helvetica, Arial, sans-serif; font-size:10px; padding:10px 10px 10px 10px; text-align:center;">
 			$<%= @deal.min_price %> will be charged to your account.<br />
 			A receipt will be sent to your email address.<br />
 			By purchasing, you agree to our Terms of Service.<br />
 		</div>
 	</div>
  </div>
+<div id="faq" style="float:right; padding-left:15px;">
+	<div class="layer1">
+	<div id="head" style="text-align:center;">
+		<h2>FAQ</h2>
+	</div>
+	<p class="heading">When can I use my voucher?</p>
+	<div class="content">You can use your voucher immediately. Just print out the code, take it to the local store, and redeem your product.</div>
+	<p class="heading">What happens if a milestone is not reached?</p>
+	<div class="content">If the first milestone is not reached, you will automatically be refunded the purchase price at the first level. If you reach the second or third milestone, the difference will be refunded to you.</div>
+	<p class="heading">Can I refund my voucher?</p>
+	<div class="content">Refunds will be allowed for special circumstances. Please contact our support services to discuss your refund.</div>
+	<p class="heading">Will refunds be issued if the store goes out of business or if the product is defective?</p>
+	<div class="content">Yes, under these circumstances, refunds will automatically be issued.</div>
+	<p class="heading">Is the transaction secure?</p>
+	<div class="content">Yes! Your payment information is never stored in our databases, and we encrypt all data that you send.</div>
+	<p class="heading">Is it guaranteed that the product will not go out of stock when I redeem it?</p>
+	<div class="content">Yes, all of our merchants have agreed to pre-stock the selected number of items, so it will be readily available when you go pick it up.</div>
+	<p class="heading">Can I gift items?</p>
+	<div class="content">Unfortunately not yet, but that is a feature we are working on!</div>
+	</div>
+</div>
 
 
 
