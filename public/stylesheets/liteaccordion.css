@@ -19,7 +19,7 @@
 .accordion noscript p { padding: 10px; margin: 0; background: white; }
 
 /****************************************** Basic */
-.basic li > h2 { background: #8AB799; color: white; line-height: 1.8em; }
+.basic li > h2 { background: #f0f0f0; color:#696969; line-height: 1.8em; }
 .basic li > div h3 { margin: 15px 10px; }
 .basic li > div p { margin: 10px; font-size: 14px; }
 

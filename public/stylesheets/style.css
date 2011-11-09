@@ -645,7 +645,7 @@ a.action {
 }
 
 #summary .checkout {
-	height: 35px;
+	height: 15px;
 	text-align: center;
 	padding: 15px 15px 10px 10px;
 }
@@ -1836,3 +1836,11 @@ padding-bottom: 60px;
 }
 
 #faq p { padding: 5px 0; }
+
+#summary .checkout{
+	text-align:center;
+}
+
+#summary .data {
+	text-align:center;
+}
