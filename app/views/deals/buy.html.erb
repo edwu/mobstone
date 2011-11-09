@@ -55,7 +55,7 @@
 	<td class="checkout">Description</td>
 	</tr>
 	<tr class="data">
-	<td class="data"><%= @deal.company_id %></td>
+	<td class="data"><%= @company.name %></td>
 	<td class="data">$<%= @deal.min_price %></td>
 	<td class="data">$<%= @deal.org_price %></td>
 	<td class="data"><%= @deal.description %></td>
@@ -67,14 +67,14 @@
 		<!--<%= image_tag(@deal.image_url.to_s) %>-->
 	</div>
 	<div id="confirmation" width=60% style="float:right;">
-		<div id="total" width=100% style="position: relative; top:40px; right: 20px; font-family:Helvetica, Arial, sans-serif; font-size:24px; padding:10px 10px 10px 10px; text-align:center;">
+		<div id="total" width=100% style="position: relative; top:40px; right: 30px; font-family:Helvetica, Arial, sans-serif; font-size:24px; padding:10px 10px 10px 10px; text-align:center;">
 			Total: $<%= @deal.min_price %>
 		</div>
 		<div id="purchase" width=100% style="border:2px solid;
-		border-radius:25px; position: relative; top:50px; right: 20px; font-family:Helvetica, Arial, sans-serif; font-size:24px; padding:10px 10px 10px 10px; background-color: black; font-color:#faf9f9; text-align:center;">
+		border-radius:25px; position: relative; top:50px; right: 30px; font-family:Helvetica, Arial, sans-serif; font-size:24px; padding:10px 10px 10px 10px; background-color: black; font-color:#faf9f9; text-align:center;">
 			<%= link_to 'Purchase', execute_buy_deal_path(@deal) %>
 		</div>
-		<div id="blurb" width=100% style="position: relative; top:60px; right: 20px; font-family:Helvetica, Arial, sans-serif; font-size:10px; padding:10px 10px 10px 10px; text-align:center;">
+		<div id="blurb" width=100% style="position: relative; top:60px; right: 30px; font-family:Helvetica, Arial, sans-serif; font-size:10px; padding:10px 10px 10px 10px; text-align:center;">
 			$<%= @deal.min_price %> will be charged to your account.<br />
 			A receipt will be sent to your email address.<br />
 			By purchasing, you agree to our Terms of Service.<br />

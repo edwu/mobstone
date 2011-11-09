@@ -1,3 +1,41 @@
+<div id="vouchers" class="accordion" style="padding-top: 25px; padding-bottom:25px;">
+	<ol style="list-style-type:none;">
+        <li>
+            <h2><span>Pending Deals</span></h2>
+            <div id="pdeals">
+            	PDEALS
+            </div>
+        </li>
+        <li>
+            <h2><span>Available Vouchers</span></h2>
+            <div id="avouchers">
+            	AVOUCHERS
+            </div>
+        </li>
+        <li>
+            <h2><span>Redeemed Deals</span></h2>
+            <div id="rdeals">
+            	RDEALS
+            </div>
+        </li>
+    </ol>
+</div>
+<script>
+$('#vouchers').liteAccordion({
+    onActivate : function() {
+        this.find('figcaption').fadeOut();
+    },
+    slideCallback : function() {    
+        this.find('figcaption').fadeIn();
+    },
+    autoPlay : false,
+    pauseOnHover : false,
+    theme : 'basic',
+    rounded : true,
+    enumerateSlides : true             
+}).find('figcaption:first').show();
+</script>
+
 <b>Vouchers: </b>
 <% current_user.vouchers.each do |voucher|%>
 <table>
@@ -19,8 +57,4 @@
 	</table>
 	</br>
 
-<p>How should the vouchers and stuff be displayed?</p>
-<p> Don't displayed </p>
-<p> Redeemed - the ones you used </p>
-  <p>Redeemed- deal is expired, but haven't redeemed yet</p>
-  <p>pending - deal isn't over yet</p>
+
