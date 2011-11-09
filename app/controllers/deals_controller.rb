@@ -24,8 +24,7 @@ class DealsController < ApplicationController
     
     @current_price = '10.00'
     
-    @expire_time = @deal.startdate.to_datetime + 30 #(@deal.startdate.to_date + @deal.duration).to_datetime
-    puts @expire_time
+    @time_left = ((@deal.startdate.to_datetime.utc + @deal.duration - DateTime.now.utc) * 24 * 60).to_i
 
     respond_to do |format|
       format.html # show.html.erb
