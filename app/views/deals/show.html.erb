@@ -14,30 +14,31 @@
 			</h1>
 		</div>
 	</div>
-	
+
 	<div class='row'>
 		<div class='col_3'>
 			<%= image_tag("therometer.png", :alt => "Progress Made") %>
 
 		</div>
 		<div class='col_3'>
-			<div  id='countDownTimer'>
+			
+			<div  id='countDownTimer' >
 			</div>
 			
-
-			<div class='user-actions'>
-				<%= button_to 'Bid', buy_deal_path(@deal), :form_class => 'btn primary'%>
-			</div>
-			
-			<div class='user-actions'>
-				<%= button_to 'Bid', buy_deal_path(@deal), :form_class => 'btn primary'%>
-			</div>
-		</div>
-		<div class='col_6 last'>
 			<p id='current-price'>
 				<b>Current Price:</b>
 				<%= @current_price %>	
 			</p>
+			<div class='user-actions'>
+				<%= link_to 'Bid', buy_deal_path(@deal), :class=> 'btn super-large'%>
+			</div>
+			
+			<div class='user-actions'>
+				<%= button_to 'Bury', root_path%>
+			</div>
+		</div>
+		<div class='col_6 last'>
+
 			
 			<div id='main-description'>
 			  <%= image_tag @deal.image_url.to_s %>
@@ -55,19 +56,12 @@
 
 <script>
 jQuery(document).ready(function(){
-	    var year = <%= @expire_time.year %>;
-	    var month = <%= @expire_time.month %>;
-	    var day = <%= @expire_time.day %>;
-	    var hour = <%= @expire_time.hour %>;
-	    var minute = <%= @expire_time.minute %>;
-	    var second = <%= @expire_time.second %>;
+    	var timeLeft = <%= @time_left %>;
 	
 	
-	    var dealEndDate = new Date(); 
-	    dealEndDate = new Date(year, month-2, day, hour, minute-26, second-30); 
 		var expireURL = window.location.host + '/deal'
 		
-		jQuery('#countDownTimer').countdown({until: dealEndDate, expiryUrl:expireURL})
+		jQuery('#countDownTimer').countdown({until: timeLeft.toString()+'m', expiryUrl:expireURL})
 })
 
 
@@ -94,10 +88,6 @@ jQuery(document).ready(function(){
   <%= @deal.startdate.to_datetime %>
 </p>
 
-<p>
-  <b>Expire Time:</b>
-  <%= @expire_time.to_datetime %>
-</p>
 
 <p>
   <b>Duration:</b>
@@ -106,7 +96,12 @@ jQuery(document).ready(function(){
 
 <p>
   <b>Time now:</b>
-  <%= DateTime.now %>
+  <%= DateTime.now.utc %>
+</p>
+
+<p>
+  <b>Time Left:</b>
+  <%= @time_left %>
 </p>
 
 
@@ -125,7 +120,7 @@ jQuery(document).ready(function(){
       <b>People: <%= milestone.people %></b><br />
     <% end %>
     <br />
-    <b>Vouchers issued:</b> <br />
+    <b>Vouchers issued:</b><br />
     <% @deal.vouchers.each do |voucher| %>
       <b>Code: <%= voucher.id %></b><br />
     <% end %>
@@ -134,3 +129,6 @@ jQuery(document).ready(function(){
   <%= link_to 'Buy Now', buy_deal_path(@deal) %>
 </p>
 <% end %>
+
+
+

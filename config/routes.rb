@@ -14,6 +14,7 @@ Mobstone::Application.routes.draw do
 #  match '/company/deals', :to => 'deals#company_deal'
 # match '/company/deals/new', :to => 'deals#new'
   match '/purchases', :to => 'users#purchases'
+  match '/test', :to => 'pages#test'
 
   resources :vouchers
   resources :milestones

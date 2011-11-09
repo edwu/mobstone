@@ -69,4 +69,16 @@ jQuery(document).ready(function(){
     jQuery(this).stop().fadeTo("fast", .5);
     });
     });
+
+
+
+
 });
+function milestone(percentage) {
+    if (percentage > 1) {
+        percentage = 1;
+    }
+    jQuery('#people').css('height', percentage * 500 + 6 + "px" );
+    jQuery('#arrow').css('bottom', percentage * 500 + "px" );
+    jQuery('#arrow_people').css('bottom', percentage * 500 -5 + "px" );
+}
