@@ -1,9 +1,14 @@
+<% unless is_company? %>
 <div id="vouchers" class="accordion" style="padding-top: 25px; padding-bottom:25px;">
 	<ol style="list-style-type:none;">
         <li>
             <h2><span>Pending Deals</span></h2>
-            <div id="pdeals">
-            	<table id="summary" style="border-style: dashed; border-color: #CC0000; background-color: #cee4d8; font-family:Helvetica, Arial, sans-serif; font-size:16px; height:320px;">
+            	<div id="pdeals">
+				<% end %>
+				<% if is_company? %>
+				<h1>All Vouchers</h1>
+				<% end %>
+            	<table id="summary" style="border-style: dashed; border-color: #CC0000; background-color: #cee4d8; font-family:Helvetica, Arial, sans-serif; font-size:16px; height: 100%;">
 				<tr class="checkout">
 				<td class="checkout">Purchase Price</td>
 				<td class="checkout">Original Price</td>
@@ -11,20 +16,15 @@
 				<td class="checkout">Redeemed</td>
 				</tr>
 				<% if is_company? %>
-					<% counter = 0 %>
 					<% company = Company.where("user_id = #{current_user.id}")[0] %>
 					<% Deal.where("company_id = #{company.id}")[0].vouchers.each do |voucher| %>
 						<% deal = Deal.find(voucher.deal_id) %>
-						<% if counter >= 5 %>
-							<% break %>
-							<% end %>
 						<tr class="data" valign="top">
 							<td class= "data" valign="top">$<%= deal.current_price() %></td>
 							<td class="data" valign="top">$<%= deal.org_price %></td>
 							<td class="data" valign="top"><%= voucher.id %></td>
 							<td class="data" valign="top"><%= voucher.redeemed %></td>
-						</tr>
-						<% counter += 1 %>				
+						</tr>			
 					<% end %>
 				<% else is_company? %>
 					<% counter = 0 %>
@@ -43,8 +43,10 @@
 					<% end %>
 				<% end %>
 				</table>
-            </div>
+			<% unless is_company? %>
+            </div>			
         </li>
+		<% end %>
 		<% unless is_company? %>
         <li>
             <h2><span>Available Vouchers</span></h2>
@@ -104,7 +106,9 @@
         </li>
 		<% end %>
     </ol>
+<% unless is_company? %>
 </div>
+<%end%>
 <script>
 jQuery('#vouchers').liteAccordion({
     onActivate : function() {
