@@ -5,7 +5,9 @@
             <h2><span>Pending Deals</span></h2>
             	<div id="pdeals">
 				<% end %>
-				<h1>Pending Deals</h1>
+				<% if is_company? %>
+				<h1>All Vouchers</h1>
+				<% end %>
             	<table id="summary" style="border-style: dashed; border-color: #CC0000; background-color: #cee4d8; font-family:Helvetica, Arial, sans-serif; font-size:16px; height: 100%;">
 				<tr class="checkout">
 				<td class="checkout">Purchase Price</td>
