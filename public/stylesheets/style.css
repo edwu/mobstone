@@ -692,6 +692,13 @@ div.two_column .right {
 
 }
 /*Thermometer----------*/
+
+#milestone1, #milestone2, #milestone3 {
+    position: absolute;
+    left: 20px;
+}
+
+
 #people {
     position: absolute;
     bottom: 0px;
@@ -716,8 +723,7 @@ div.two_column .right {
     left: 30px;
     bottom: 0px;
     color: #8AB799;
-    font-weight: bold;
-    font-size: 15px;
+
 }
 #arrow_people p {
     writing-mode: tb-rl;
@@ -728,6 +734,8 @@ div.two_column .right {
     transform: rotate(270deg);
     margin: 0px;
     padding: 0px;
+    font-size: 15px;
+    font-weight: bold;
 }
 
 #thermometer {

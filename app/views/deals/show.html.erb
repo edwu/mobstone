@@ -4,6 +4,10 @@
 
 <%= stylesheet_link_tag 'twitter_bootstrap.min' %>
 
+<%= @people %>
+<%= @max %>
+
+               <%= @percentage %>
 <div class='container'>
 	
 	<div class='row'>
@@ -17,7 +21,53 @@
 
 	<div class='row'>
 		<div class='col_3'>
-			<%= image_tag("therometer.png", :alt => "Progress Made") %>
+			<script>
+  jQuery(document).ready(
+    function() {
+      milestone(<%= @percentage %>);
+      milestone1(<%= @milestone1.people / (@max * 1.0 )%>);
+      milestone2(<%= @milestone2.people / (@max * 1.0 )%>);
+      milestone3(<%= @milestone3.people / (@max * 1.0 )%>);
+    }
+  );
+        <!-- Figure out how to calculate percentage used, number of vouchers for that deal vs largest milestone-->
+</script>
+
+<div id="pageHead">
+</div>
+<div id="thermometer">
+  <div id = "people">
+
+  </div>
+  <div id = "arrow" >
+
+  </div>
+  <div id= "arrow_people">
+    <p><%= @people %></p>
+
+  </div>
+  <div class="right">
+    <!--<% @sorted_milestones.each do |milestone| %>
+       <div class="milestone">
+          Price: <%= milestone.price %><br />
+         People: <%= milestone.people %>
+        </div>
+    <% end %>-->
+    <div id="milestone1">
+      Price: $<%= @milestone1.price %> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+      People: <%= @milestone1.people %>
+    </div>
+    <div id="milestone2">
+      Price: $<%= @milestone2.price %> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+      People: <%= @milestone2.people %>
+    </div>
+    <div id="milestone3">
+      Price: $<%= @milestone3.price %> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+      People: <%= @milestone3.people %>
+    </div>
+
+  </div>
+</div>
 
 		</div>
 		<div class='col_3'>
