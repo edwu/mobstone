@@ -81,4 +81,25 @@ function milestone(percentage) {
     jQuery('#people').css('height', percentage * 500 + 6 + "px" );
     jQuery('#arrow').css('bottom', percentage * 500 + "px" );
     jQuery('#arrow_people').css('bottom', percentage * 500 -5 + "px" );
+
 }
+
+function milestone1(percentage) {
+    jQuery('#milestone1').css('bottom', percentage * 500 -20 + "px" );
+
+}
+function milestone2(percentage) {
+    jQuery('#milestone2').css('bottom', percentage * 500 -5 + "px" );
+
+}
+function milestone3(percentage) {
+    jQuery('#milestone3').css('bottom', percentage * 500 -5 + "px" );
+
+}
+
+jQuery('people').hover(
+    function () {
+
+
+    }
+)
