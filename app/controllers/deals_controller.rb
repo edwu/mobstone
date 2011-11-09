@@ -30,12 +30,7 @@ class DealsController < ApplicationController
     @max = @milestones.maximum('people')
     @percentage = @people / (@max * 1.0)
     @sorted_milestones = @deal.milestones.sort{|a,b| b.people <=> a.people}
-    @milestone1 = @sorted_milestones[0]
-    @milestone2 = @sorted_milestones[1]
-    @milestone3 = @sorted_milestones[2]
 
-
-    
     @time_left = ((@deal.startdate.to_datetime.utc + @deal.duration - DateTime.now.utc) * 24 * 60).to_i
 
     respond_to do |format|

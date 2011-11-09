@@ -35,16 +35,16 @@
       <file leaf-file-name="deals_controller.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/controllers/deals_controller.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="32" column="23" selection-start="863" selection-end="863" vertical-scroll-proportion="0.0">
+            <state line="32" column="0" selection-start="840" selection-end="840" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="show.html.erb" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="show.html.erb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/deals/show.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="56" column="37" selection-start="1276" selection-end="1276" vertical-scroll-proportion="0.41257367">
+            <state line="45" column="46" selection-start="989" selection-end="989" vertical-scroll-proportion="-18.75">
               <folding />
             </state>
           </provider>
@@ -53,16 +53,16 @@
       <file leaf-file-name="fancy.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/javascripts/fancy.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="76" column="139" selection-start="2052" selection-end="2052" vertical-scroll-proportion="0.0">
+            <state line="88" column="94" selection-start="2506" selection-end="2506" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="style.css" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="style.css" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/public/stylesheets/style.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="697" column="12" selection-start="11281" selection-end="11281" vertical-scroll-proportion="-3.275862">
+            <state line="701" column="13" selection-start="11323" selection-end="11323" vertical-scroll-proportion="0.3109756">
               <folding />
             </state>
           </provider>
@@ -80,7 +80,7 @@
       <file leaf-file-name="index.html.erb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/deals/index.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="11" column="78" selection-start="369" selection-end="369" vertical-scroll-proportion="-2.012195">
+            <state line="11" column="78" selection-start="369" selection-end="369" vertical-scroll-proportion="-0.625">
               <folding />
             </state>
           </provider>
@@ -102,9 +102,6 @@
       <setting name="OPEN_NEW_TAB" value="false" />
     </FindUsagesManager>
   </component>
-  <component name="HighlightingSettingsPerFile">
-    <setting file="mock:///Rails console: mobstone" root0="SKIP_HIGHLIGHTING" />
-  </component>
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
@@ -122,8 +119,8 @@
         <option value="$PROJECT_DIR$/app/views/pages/test.html.erb" />
         <option value="$PROJECT_DIR$/app/controllers/deals_controller.rb" />
         <option value="$PROJECT_DIR$/public/javascripts/fancy.js" />
-        <option value="$PROJECT_DIR$/public/stylesheets/style.css" />
         <option value="$PROJECT_DIR$/app/views/deals/show.html.erb" />
+        <option value="$PROJECT_DIR$/public/stylesheets/style.css" />
       </list>
     </option>
   </component>
@@ -769,13 +766,6 @@
       <RUBY_RUN_CONFIG NAME="SCRIPT_ARGS" VALUE="" />
       <method />
     </configuration>
-    <configuration default="true" type="JavascriptDebugSession" factoryName="Remote">
-      <JSRemoteDebuggerConfigurationSettings>
-        <option name="engineId" value="embedded" />
-        <option name="fileUrl" />
-      </JSRemoteDebuggerConfigurationSettings>
-      <method />
-    </configuration>
     <configuration default="true" type="CucumberRunConfigurationType" factoryName="Cucumber">
       <predefined_log_file id="RUBY_CUCUMBER" enabled="true" />
       <module name="" />
@@ -807,6 +797,13 @@
       <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="CUCUMBER_RUNNER_PATH" VALUE="" />
       <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="USE_CUSTOM_RUNNER" VALUE="false" />
       <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="SETTINGS_VERSION" VALUE="2" />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavascriptDebugSession" factoryName="Remote">
+      <JSRemoteDebuggerConfigurationSettings>
+        <option name="engineId" value="embedded" />
+        <option name="fileUrl" />
+      </JSRemoteDebuggerConfigurationSettings>
       <method />
     </configuration>
     <configuration default="true" type="JavascriptDebugSession" factoryName="Local">
@@ -989,14 +986,14 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="90" y="24" width="1589" height="1002" extended-state="0" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Data Sources" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3298969" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2592834" sideWeight="0.325315" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Dependency Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2592834" sideWeight="0.67124856" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.26319218" sideWeight="0.67124856" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32875144" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -1069,91 +1066,75 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/public/javascripts/liteaccordion.jquery.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="30" column="21" selection-start="754" selection-end="754" vertical-scroll-proportion="0.37174723">
-          <folding />
-        </state>
+        <state line="30" column="21" selection-start="754" selection-end="754" vertical-scroll-proportion="0.37174723" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/config/environments/test.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="27" selection-start="881" selection-end="881" vertical-scroll-proportion="0.35629454">
-          <folding />
-        </state>
+        <state line="20" column="27" selection-start="881" selection-end="881" vertical-scroll-proportion="0.35629454" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/layouts/application.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="151" selection-start="325" selection-end="325" vertical-scroll-proportion="0.22613065">
-          <folding />
-        </state>
+        <state line="12" column="151" selection-start="325" selection-end="325" vertical-scroll-proportion="0.22613065" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/pages/test.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="31" selection-start="51" selection-end="51" vertical-scroll-proportion="0.058939096">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/helpers/sessions_helper.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="34" column="137" selection-start="567" selection-end="567" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="2" column="31" selection-start="51" selection-end="51" vertical-scroll-proportion="0.058939096" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/models/company.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/helpers/sessions_helper.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="34" column="137" selection-start="567" selection-end="567" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/layouts/_stylesheets.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="19" column="26" selection-start="655" selection-end="655" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/deals/index.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="78" selection-start="369" selection-end="369" vertical-scroll-proportion="-0.625">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/db/schema.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="19" selection-start="846" selection-end="846" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/layouts/_stylesheets.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="26" selection-start="655" selection-end="655" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="15" column="19" selection-start="846" selection-end="846" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/deals_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="32" column="23" selection-start="863" selection-end="863" vertical-scroll-proportion="0.0">
+        <state line="32" column="0" selection-start="840" selection-end="840" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/javascripts/fancy.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="76" column="139" selection-start="2052" selection-end="2052" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/stylesheets/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="697" column="12" selection-start="11281" selection-end="11281" vertical-scroll-proportion="-3.275862">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/deals/index.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="78" selection-start="369" selection-end="369" vertical-scroll-proportion="-2.012195">
+        <state line="88" column="94" selection-start="2506" selection-end="2506" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/deals/show.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="56" column="37" selection-start="1276" selection-end="1276" vertical-scroll-proportion="0.41257367">
+        <state line="45" column="46" selection-start="989" selection-end="989" vertical-scroll-proportion="-18.75">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/stylesheets/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="701" column="13" selection-start="11323" selection-end="11323" vertical-scroll-proportion="0.3109756">
           <folding />
         </state>
       </provider>
