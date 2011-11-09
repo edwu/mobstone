@@ -9,7 +9,6 @@
 				<td class="checkout">Original Price</td>
 				<td class="checkout">Voucher Code</td>
 				<td class="checkout">Redeemed</td>
-				<td class="checkout">Destroy</td>
 				</tr>
 				<% if is_company? %>
 					<% counter = 0 %>
@@ -24,7 +23,6 @@
 							<td class="data" valign="top">$<%= deal.org_price %></td>
 							<td class="data" valign="top"><%= voucher.id %></td>
 							<td class="data" valign="top"><%= voucher.redeemed %></td>
-							<td class="data" valign="top"><%= link_to 'Destroy', voucher, :confirm => 'Are you sure?', :method => :delete %></td>
 						</tr>
 						<% counter += 1 %>				
 					<% end %>
