@@ -5,10 +5,10 @@
             <div id="pdeals">
             	<table id="summary" style="border-style: dashed; border-color: #CC0000; background-color: #cee4d8; font-family:Helvetica, Arial, sans-serif; font-size:16px; height:320px;">
 				<tr class="checkout">
-				<td class="checkout">Percent Reached</td>
-				<td class="checkout">Price</td>
-				<td class="checkout">Quantity</td>
-				<td class="checkout">Show Deal</td>
+				<td class="checkout">Purchase Price</td>
+				<td class="checkout">Original Price</td>
+				<td class="checkout">Voucher Code</td>
+				<td class="checkout">Redeemed</td>
 				</tr>
 				<% if is_company? %>
 					<% counter = 0 %>
@@ -19,10 +19,10 @@
 							<% break %>
 							<% end %>
 						<tr class="data" valign="top">
-							<td class= "data" valign="top"><%= deal.percent_reached()*100 %>%</td>
+							<td class= "data" valign="top">$<%= deal.current_price() %></td>
 							<td class="data" valign="top">$<%= deal.org_price %></td>
-							<td class="data" valign="top"><%= deal.vouchers.count%></td>
-							<td class="data" valign="top"><%= link_to 'Show Deal', deal_path(deal.id) %></td>
+							<td class="data" valign="top"><%= voucher.id %></td>
+							<td class="data" valign="top"><%= voucher.redeemed %></td>
 						</tr>
 						<% counter += 1 %>				
 					<% end %>
