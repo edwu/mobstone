@@ -10,24 +10,41 @@
 				<td class="checkout">Quantity</td>
 				<td class="checkout">Show Deal</td>
 				</tr>
-				<% counter = 0 %>
-				<% current_user.vouchers.each do |voucher|%>
-				<% if counter >= 5 %>
-					<% break %>
-				<% else %>
-				
-				<tr class="data" valign="top">
-				<td class="data" valign="top">1</td>
-				<td class="data" valign="top">$<%= Deal.find(voucher.deal_id).org_price %></td>
-				<td class="data" valign="top">1</td>
-				<td class="data" valign="top"><%= link_to 'Show Deal', deal_path(voucher.deal_id) %></td>
-				</tr>
-				<% counter += 1 %>
-				<% end %>
+				<% if is_company? %>
+					<% counter = 0 %>
+					<% company = Company.where("user_id = #{current_user.id}")[0] %>
+					<% Deal.where("company_id = #{company.id}").each do |deal| %>
+						<% if counter >= 5 %>
+							<% break %>
+							<% end %>
+						<tr class="data" valign="top">
+							<td class= "data" valign="top"><%= deal.percent_reached()*100 %>%</td>
+							<td class="data" valign="top">$<%= deal.org_price %></td>
+							<td class="data" valign="top"><%= deal.vouchers.count%></td>
+							<td class="data" valign="top"><%= link_to 'Show Deal', deal_path(deal.id) %></td>
+						</tr>
+						<% counter += 1 %>				
+					<% end %>
+				<% else is_company? %>
+					<% counter = 0 %>
+					<% current_user.vouchers.each do |voucher|%>
+						<% if counter >= 5 %>
+							<% break %>
+							<% end %>
+						<% deal = Deal.find(voucher.deal_id) %>
+						<tr class="data" valign="top">
+						<td class="data" valign="top"><%= deal.percent_reached()*100 %>%</td>
+						<td class="data" valign="top">$<%= deal.org_price %></td>
+						<td class="data" valign="top">1</td>
+						<td class="data" valign="top"><%= link_to 'Show Deal', deal_path(voucher.deal_id) %></td>
+						</tr>
+						<% counter += 1 %>				
+					<% end %>
 				<% end %>
 				</table>
             </div>
         </li>
+		<% unless is_company? %>
         <li>
             <h2><span>Available Vouchers</span></h2>
             <div id="avouchers">
@@ -35,15 +52,24 @@
 				<tr class="checkout">
 				<td class="checkout">Company</td>
 				<td class="checkout">Purchase Price</td>
-				<td class="checkout">Product ID</td>
-				<td class="checkout">Description</td>
+				<td class="checkout">Voucher Code</td>
+				<td class="checkout">Product Description</td>
 				</tr>
+				<% counter = 0 %>
+				<% current_user.vouchers.each do |voucher|%>
+				<% if counter >= 5 %>
+					<% break %>
+				<% else %>
+				<% deal = Deal.find(voucher.deal_id) %>
 				<tr class="data">
 				<td class="data" valign="top">1</td>
-				<td class="data" valign="top">2</td>
-				<td class="data" valign="top">3</td>
-				<td class="data" align="center"><img src="images/hoodie.jpg"></td>
+				<td class="data" valign="top">$<%= deal.org_price %></td>
+				<td class="data" valign="top"><%= voucher.id %></td>
+				<td class="data" align="center"><%= deal.description%></td>
 				</tr>
+				<% counter += 1 %>
+				<% end %>
+				<% end %>
 				</table>
             </div>
         </li>
@@ -57,15 +83,25 @@
 				<td class="checkout">Original Price</td>
 				<td class="checkout">Description</td>
 				</tr>
+				<% counter = 0 %>
+				<% current_user.vouchers.each do |voucher|%>
+				<% if counter >= 5 %>
+					<% break %>
+				<% else %>
+				<% deal = Deal.find(voucher.deal_id) %>
 				<tr class="data">
-				<td class="data" valign="top">1</td>
-				<td class="data" valign="top">1</td>
-				<td class="data" valign="top">3</td>
-				<td class="data" valign="top">4</td>
+				<td class="data" valign="top"><%= Company.find(deal.company_id).name %></td>
+				<td class="data" valign="top">$<%= deal.current_price() %></td>
+				<td class="data" valign="top">$<%= deal.org_price %></td>
+				<td class="data" valign="top"><%= deal.description%></td>
 				</tr>
+				<% counter += 1 %>
+				<% end %>
+				<% end %>
 				</table>
             </div>
         </li>
+		<% end %>
     </ol>
 </div>
 <script>
