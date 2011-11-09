@@ -13,7 +13,8 @@
 				<% if is_company? %>
 					<% counter = 0 %>
 					<% company = Company.where("user_id = #{current_user.id}")[0] %>
-					<% Deal.where("company_id = #{company.id}").each do |deal| %>
+					<% Deal.where("company_id = #{company.id}")[0].vouchers.each do |voucher| %>
+						<% deal = Deal.find(voucher.deal_id) %>
 						<% if counter >= 5 %>
 							<% break %>
 							<% end %>
