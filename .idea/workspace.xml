@@ -32,19 +32,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="buy.html.erb" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="buy.html.erb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/deals/buy.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="77" column="36" selection-start="2352" selection-end="2352" vertical-scroll-proportion="0.49825174">
+            <state line="73" column="40" selection-start="1886" selection-end="1886" vertical-scroll-proportion="-9.375">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="style.css" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="style.css" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/public/stylesheets/style.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="700" column="4" selection-start="11091" selection-end="11091" vertical-scroll-proportion="-0.31034482">
+            <state line="709" column="21" selection-start="11211" selection-end="11211" vertical-scroll-proportion="0.6533575">
               <folding />
             </state>
           </provider>
@@ -62,7 +62,7 @@
       <file leaf-file-name="show.html.erb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/deals/show.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="101" column="12" selection-start="3309" selection-end="3309" vertical-scroll-proportion="-27.5">
+            <state line="72" column="61" selection-start="2348" selection-end="2348" vertical-scroll-proportion="-16.875">
               <folding />
             </state>
           </provider>
@@ -140,8 +140,8 @@
         <option value="$PROJECT_DIR$/public/stylesheets/test.css" />
         <option value="$PROJECT_DIR$/app/views/deals/show.html.erb" />
         <option value="$PROJECT_DIR$/app/controllers/deals_controller.rb" />
-        <option value="$PROJECT_DIR$/public/stylesheets/style.css" />
         <option value="$PROJECT_DIR$/app/views/deals/buy.html.erb" />
+        <option value="$PROJECT_DIR$/public/stylesheets/style.css" />
       </list>
     </option>
   </component>
@@ -1183,23 +1183,23 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/stylesheets/style.css">
+    <entry file="file://$PROJECT_DIR$/app/views/deals/buy.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="700" column="4" selection-start="11091" selection-end="11091" vertical-scroll-proportion="-0.31034482">
+        <state line="73" column="40" selection-start="1886" selection-end="1886" vertical-scroll-proportion="-9.375">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/deals/show.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="101" column="12" selection-start="3309" selection-end="3309" vertical-scroll-proportion="-27.5">
+        <state line="72" column="61" selection-start="2348" selection-end="2348" vertical-scroll-proportion="-16.875">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/deals/buy.html.erb">
+    <entry file="file://$PROJECT_DIR$/public/stylesheets/style.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="77" column="36" selection-start="2352" selection-end="2352" vertical-scroll-proportion="0.49825174">
+        <state line="709" column="21" selection-start="11211" selection-end="11211" vertical-scroll-proportion="0.6533575">
           <folding />
         </state>
       </provider>
