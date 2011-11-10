@@ -44,20 +44,18 @@
     <p><%= @people %></p>
 
   </div>
-	<% counter = 1 %>
     <% @sorted_milestones.each_with_index do |milestone, index| %>
        <div id="<%='milestone' + index.to_s%>">	  
-          <div class="left">$<%= milestone.price %></div>
-         <div class="right">Milestone <%=counter%>: <%= milestone.people %></div>
-		 <% counter += 1 %>
+          <div class="left" style="padding-right:20px; font-family:Helvetica, Arial, sans-serif; font-size: 12px;">$<%= milestone.price %></div>
+         <div class="right" style="padding-left: 10px; font-family:Helvetica, Arial, sans-serif; font-size: 12px;"><%= milestone.people %> People</div>
         </div>
     <% end %>
 </div>
 
 		</div>
-		<div class='col_3'>
-			
-			<div  id='countDownTimer'>
+		<div class='col_3' style="font-family:Helvetica, Arial, sans-serif;">
+			<h2 style="text-align:center; padding-bottom:5px;"> Time Remaining: </h2>
+			<div  id='countDownTimer'>			
 			</div>
 			<div id="currentPrice" style="font-family:Helvetica, Arial, sans-serif; padding-top: 15px; padding-bottom:30px;">
 				<h1 style="line-height:0.75em; color:#7d7d7b;">Current Price:</h1>
@@ -130,68 +128,6 @@ jQuery(document).ready(function(){
 
 </script>
 
-<p>
-  <b>Min price:</b>
-  <%= @deal.min_price %>
-</p>
-
-
-<p>
-  <b>Org price:</b>
-  <%= @deal.org_price %>
-</p>
-
-<p>
-  <b>Expired:</b>
-  <%= @deal.expired %>
-</p>
-
-<p>
-  <b>Startdate:</b>
-  <%= @deal.startdate.to_datetime %>
-</p>
-
-
-<p>
-  <b>Duration:</b>
-  <%= @deal.duration %>
-</p>
-
-<p>
-  <b>Time now:</b>
-  <%= DateTime.now.utc %>
-</p>
-
-<p>
-  <b>Time Left:</b>
-  <%= @time_left %>
-</p>
-
-
-<p>
-<b>Number of users:</b>
-  <%= @deal.users.count %>
-</p>
-
-
-<% if is_company? %>
-
-    <p><%= link_to 'Edit', edit_deal_path(@deal) %></p>
-    <b> Milestones </b><br />
-    <% @deal.milestones.each do |milestone| %>
-      <b>Price: <%= milestone.price %></b>
-      <b>People: <%= milestone.people %></b><br />
-    <% end %>
-    <br />
-    <b>Vouchers issued:</b><br />
-    <% @deal.vouchers.each do |voucher| %>
-      <b>Code: <%= voucher.id %></b><br />
-    <% end %>
-<% else %>
-   <p>
-  <%= link_to 'Buy Now', buy_deal_path(@deal) %>
-</p>
-<% end %>
 
 
 

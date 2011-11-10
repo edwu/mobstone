@@ -711,6 +711,7 @@ div.two_column .right {
 #milestone0, #milestone1, #milestone2 {
     position: absolute;
     width: 100%;
+	font-weight: bold;
 }
 
 #thermometer .left {
