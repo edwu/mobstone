@@ -9,7 +9,7 @@ class DealsController < ApplicationController
       @company = Company.find_by_user_id(current_user.id)
       @deals = @company.deals
     else
-      @deals = Deal.all
+      @deals = Deal.all.sort{|a,b| b.popularity <=> a.popularity}  #most popular first
     end
     respond_to do |format|
       format.html # index.html.erb
@@ -20,6 +20,7 @@ class DealsController < ApplicationController
   # GET /deals/1
   # GET /deals/1.xml
   def show
+    @title = "Deals"
     @deal = Deal.find(params[:id])
     
     @current_price = '10.00'

@@ -9,17 +9,13 @@
 	<div class='row'>
 		<div class='col_12'>
 			<h1>
-			  <b>Company:</b>
-			  <%= @deal.company_id %>
-			  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-			  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-			  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-			  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-			  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-			  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-			  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			  <b><%= @company.name %>: <%= @deal.blurb %>  </b>
+
+
+              <div class="right">
 			  <b>Popularity:</b>
 			  <%= @deal.popularity %>
+                  </div>
 			</h1>
 		</div>
 	</div>
@@ -33,21 +29,19 @@
        <% @sorted_milestones.each_with_index do |milestone, index| %>
         milestones(<%=index%>,<%= milestone.people / (@max * 1.0 )%>);
         <% end %>
-
     }
   );
-        <!-- Figure out how to calculate percentage used, number of vouchers for that deal vs largest milestone-->
 </script>
 
-<div id="pageHead">
-</div>
-<div id="thermometer">
-  <div id = "black_bar">
+        <div id="pageHead">
+        </div>
+        <div id="thermometer">
+          <div id = "black_bar">
 
-  </div>
-  <div id = "people">
+          </div>
+          <div id = "people">
 
-  </div>
+          </div>
 
   <div id= "arrow_people">
     <p><%= @people %></p>
@@ -91,8 +85,8 @@
 
 			
 			<div id='main-description'>
-			  <img src="http://www.newburycomics.com/images/bmh/BU/103-0149312NEWBU.jpg" >
-			  <!--<%= image_tag @deal.image_url.to_s %>-->
+
+			  <%= image_tag @deal.image_url.to_s %>
 				<p>
 				  <b>Product Description:</b>
 				  <%= @deal.description %>

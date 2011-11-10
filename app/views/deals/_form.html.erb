@@ -20,6 +20,14 @@
         <%= builder.text_field :price %><br />
 
   <% end %>
+       <div class="field">
+    <%= f.label "Deal Description" %><br />
+    <%= f.text_area :description %>
+  </div>
+      <div class="actions">
+    <%= f.submit %>
+  </div>
+      <br />
 	      </div>
 
   <div class="field">
@@ -34,10 +42,7 @@
     <%= f.label "Blurb"%><br />
     <%= f.text_field :blurb %>
   </div>
-  <div class="field">
-    <%= f.label :description %><br />
-    <%= f.text_area :description %>
-  </div>
+
   <div class="field">
     <%= f.label "Deal Image" %><br />
  <%= f.file_field :image %><br />
@@ -54,7 +59,5 @@
     <%= f.label :category %><br />
     <%= f.select :category, [["Other","other"],["Clothing","clothing"],["Sport Supplies","sportsupplies"],["Gourmet","gourmet"]] %>
   </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+
 <% end %>
