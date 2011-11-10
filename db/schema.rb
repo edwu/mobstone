@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111110054006) do
+ActiveRecord::Schema.define(:version => 20111110055823) do
 
   create_table "companies", :force => true do |t|
     t.string   "name"
@@ -33,6 +33,7 @@ ActiveRecord::Schema.define(:version => 20111110054006) do
     t.string   "image"
     t.string   "category",    :default => "other"
     t.string   "blurb"
+    t.integer  "popularity",  :default => 0
   end
 
   create_table "milestones", :force => true do |t|

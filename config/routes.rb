@@ -16,11 +16,12 @@ Mobstone::Application.routes.draw do
   match '/purchases', :to => 'users#purchases'
   match '/test', :to => 'pages#test'
 
+
   resources :vouchers
   resources :milestones
   resources :deals do
     member do
-      get 'buy', 'execute_buy'
+      get 'buy', 'execute_buy', 'popularity_decrease', 'popularity_increase'
     end
 
   end
