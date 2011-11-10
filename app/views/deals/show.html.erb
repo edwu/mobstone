@@ -20,7 +20,7 @@
 			<script>
   jQuery(document).ready(
     function() {
-      milestone(<%=@percentage %>);
+      milestone(0);
        <% @sorted_milestones.each_with_index do |milestone, index| %>
         milestones(<%=index%>,<%= milestone.people / (@max * 1.0 )%>);
         <% end %>
@@ -33,6 +33,9 @@
 <div id="pageHead">
 </div>
 <div id="thermometer">
+  <div id = "black_bar">
+
+  </div>
   <div id = "people">
 
   </div>
@@ -42,30 +45,37 @@
 
   </div>
     <% @sorted_milestones.each_with_index do |milestone, index| %>
-       <div id="<%='milestone' + index.to_s%>">
-
-          <div class="left">$<%= milestone.price %></div>
-         <div class="right"><%= milestone.people %> People</div>
+       <div id="<%='milestone' + index.to_s%>">	  
+          <div class="left" style="padding-right:20px; font-family:Helvetica, Arial, sans-serif; font-size: 12px;">$<%= milestone.price %></div>
+         <div class="right" style="padding-left: 10px; font-family:Helvetica, Arial, sans-serif; font-size: 12px;"><%= milestone.people %> People</div>
         </div>
     <% end %>
 </div>
 
 		</div>
-		<div class='col_3'>
-			
-			<div  id='countDownTimer' >
+		<div class='col_3' style="font-family:Helvetica, Arial, sans-serif;">
+			<h2 style="text-align:center; padding-bottom:5px;"> Time Remaining: </h2>
+			<div  id='countDownTimer'>			
 			</div>
-			
-			<p id='current-price'>
-				<b>Current Price:</b>
-				<%= @current_price %>	
-			</p>
-			<div class='user-actions'>
-				<%= link_to 'Bid', buy_deal_path(@deal), :class=> 'btn super-large'%>
+			<div id="currentPrice" style="font-family:Helvetica, Arial, sans-serif; padding-top: 15px; padding-bottom:30px;">
+				<h1 style="line-height:0.75em; color:#7d7d7b;">Current Price:</h1>
+				<h2 style="text-align:center; line-height:0.75em; color:#7d7d7b;">$<%= @current_price %></h2>
 			</div>
-			
-			<div class='user-actions'>
-				<%= link_to 'Bury', root_path, :class=> 'btn super-large'%>
+			<div id="bid" width=50% style="border:2px solid;
+			border-radius:25px; font-family:Helvetica, Arial, sans-serif; font-size:24px; padding:10px 10px 10px 10px; background-color: black; font-color:#faf9f9; text-align:center; margin:auto; background-color: #8AB799">
+				<%= link_to 'Bid', buy_deal_path(@deal) %>
+			</div>
+			<div id="space" style="padding-bottom:30px;">
+			</div>
+			<div id="bury" width=50% style="border:2px solid;
+			border-radius:25px; font-family:Helvetica, Arial, sans-serif; font-size:24px; padding:10px 10px 10px 10px; background-color: #f7f7f7; font-color:#faf9f9; text-align:center; margin:auto;">
+				<%= link_to 'Bury', root_path %>
+			</div>
+			<div id="space" style="padding-bottom:30px;">
+			</div>
+			<div id="purchase" width=50% style="border:2px solid;
+			border-radius:25px; font-family:Helvetica, Arial, sans-serif; font-size:24px; padding:10px 10px 10px 10px; background-color: black; font-color:#faf9f9; text-align:center; margin:auto;">
+				<%= link_to 'Buy Now', buy_deal_path(@deal) %>
 			</div>
 		</div>
 		<div class='col_6 last'>
@@ -73,8 +83,6 @@
 			
 			<div id='main-description'>
 			  <%= image_tag @deal.image_url.to_s %>
-			
-
 				<p>
 				  <b>Product Description:</b>
 				  <%= @deal.description %>
@@ -85,6 +93,28 @@
 				  <%= @company.description %>
 				</p>
 			</div>
+			<div id="faq" style="padding-left:15px; font-family:Helvetica, Arial, sans-serif;">
+				<div class="layer1" style="width:400px;">
+				<div id="head" style="text-align:center;">
+					<h2>FAQ</h2>
+				</div>
+				<p class="heading">When can I use my voucher?</p>
+				<div class="content">You can use your voucher immediately. Just print out the code, take it to the local store, and redeem your product.</div>
+				<p class="heading">What happens if a milestone is not reached?</p>
+				<div class="content">If the first milestone is not reached, you will automatically be refunded the purchase price at the first level. If you reach the second or third milestone, the difference will be refunded to you.</div>
+				<p class="heading">Can I refund my voucher?</p>
+				<div class="content">Refunds will be allowed for special circumstances. Please contact our support services to discuss your refund.</div>
+				<p class="heading">Will refunds be issued if the store goes out of business or if the product is defective?</p>
+				<div class="content">Yes, under these circumstances, refunds will automatically be issued.</div>
+				<p class="heading">Is the transaction secure?</p>
+				<div class="content">Yes! Your payment information is never stored in our databases, and we encrypt all data that you send.</div>
+				<p class="heading">Is it guaranteed that the product will not go out of stock when I redeem it?</p>
+				<div class="content">Yes, all of our merchants have agreed to pre-stock the selected number of items, so it will be readily available when you go pick it up.</div>
+				<p class="heading">Can I gift items?</p>
+				<div class="content">Unfortunately not yet, but that is a feature we are working on!</div>
+				</div>
+			</div>
+			
 		</div>
 		
 
@@ -103,68 +133,6 @@ jQuery(document).ready(function(){
 
 </script>
 
-<p>
-  <b>Min price:</b>
-  <%= @deal.min_price %>
-</p>
-
-
-<p>
-  <b>Org price:</b>
-  <%= @deal.org_price %>
-</p>
-
-<p>
-  <b>Expired:</b>
-  <%= @deal.expired %>
-</p>
-
-<p>
-  <b>Startdate:</b>
-  <%= @deal.startdate.to_datetime %>
-</p>
-
-
-<p>
-  <b>Duration:</b>
-  <%= @deal.duration %>
-</p>
-
-<p>
-  <b>Time now:</b>
-  <%= DateTime.now.utc %>
-</p>
-
-<p>
-  <b>Time Left:</b>
-  <%= @time_left %>
-</p>
-
-
-<p>
-<b>Number of users:</b>
-  <%= @deal.users.count %>
-</p>
-
-
-<% if is_company? %>
-
-    <p><%= link_to 'Edit', edit_deal_path(@deal) %></p>
-    <b> Milestones </b><br />
-    <% @deal.milestones.each do |milestone| %>
-      <b>Price: <%= milestone.price %></b>
-      <b>People: <%= milestone.people %></b><br />
-    <% end %>
-    <br />
-    <b>Vouchers issued:</b><br />
-    <% @deal.vouchers.each do |voucher| %>
-      <b>Code: <%= voucher.id %></b><br />
-    <% end %>
-<% else %>
-   <p>
-  <%= link_to 'Buy Now', buy_deal_path(@deal) %>
-</p>
-<% end %>
 
 
 

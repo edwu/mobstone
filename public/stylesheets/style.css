@@ -695,41 +695,47 @@ div.two_column .right {
 }
 /*Thermometer----------*/
 
+#black_bar {
+    position: absolute;
+    background-color: #000000;
+    width: 60px;
+    height: 490px;
+    left: 70px;
+    bottom: 10px;
+    -webkit-border-radius: 0px 0px 15px 15px;
+	-moz-border-radius: 0px 0px 15px 15px;
+	border-radius: 0px 0px 15px 15px;
+
+
+}
 #milestone0, #milestone1, #milestone2 {
     position: absolute;
     width: 100%;
+	font-weight: bold;
 }
 
 #thermometer .left {
-    width: 40%;
+    width: 33%;
     text-align:right;
 }
 
 #thermometer .right {
-    width: 40%;
+    width: 33%;
     text-align: left;
 }
-
-
 
 #people {
     position: absolute;
     bottom: 0px;
-    left: 85px;
+    left: 70px;
     height: 50px;
-    width: 30px;
+    width: 60px;
     background-color: #8AB799;
+    -webkit-border-radius: 0px 0px 25px 25px;
+	-moz-border-radius: 0px 0px 25px 25px;
+	border-radius: 0px 0px 25px 25px;
 }
 
-#arrow {
-    background: transparent url(/images/arrow.png) left bottom no-repeat;
-    background-position: 0px;
-    position: absolute;
-    width: 101px;
-    height: 13px;
-    bottom: 0px;
-    left: 48px;
-}
 
 #arrow_people {
     position: absolute;
@@ -750,8 +756,7 @@ div.two_column .right {
     position: relative;
     height: 500px;
     width: 200px;
-    background: transparent url(/images/thermometer.png) left bottom no-repeat;
-    background-position: center;
+    text-align: center;
 }
 
 
@@ -1827,7 +1832,6 @@ ol#commentslist {
 
 .layer1 {
 margin: 0;
-width: 250px;
 padding-bottom: 60px;
 }
  
@@ -1858,3 +1862,30 @@ padding-bottom: 60px;
 #summary .data {
 	text-align:center;
 }
+
+#bid {
+	background-color: #8ab799;
+}
+
+#bid a {
+	color: #faf9f9;
+}
+
+#bury a {
+	color: black;
+}
+
+#bid a:hover {
+	text-decoration: none;
+}
+
+#bury a:hover {
+	text-decoration: none;
+}
+
+#purchase a:hover {
+	text-decoration: none;
+}
+
+
+
