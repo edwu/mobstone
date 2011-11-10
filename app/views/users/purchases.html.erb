@@ -10,10 +10,16 @@
 				<% end %>
             	<table id="summary" style="border-style: dashed; border-color: #CC0000; background-color: #cee4d8; font-family:Helvetica, Arial, sans-serif; font-size:16px; height: 100%;">
 				<tr class="checkout">
+				<% if is_company? %>
 				<td class="checkout">Purchase Price</td>
+				<% else %>
+				<td class="checkout">Percent Reached</td>
+				<% end %>
 				<td class="checkout">Original Price</td>
 				<td class="checkout">Voucher Code</td>
+				<% if is_company? %>
 				<td class="checkout">Redeemed</td>
+				<% end %>
 				<td class="checkout">Return to Deal</td>
 				</tr>
 				<% if is_company? %>
@@ -28,7 +34,7 @@
 							<td class="data" valigh="top"><%= link_to 'Show Deal', deal_path(voucher.deal_id) %></td>
 						</tr>			
 					<% end %>
-				<% else is_company? %>
+				<% else %>
 					<% counter = 0 %>
 					<% current_user.vouchers.each do |voucher|%>
 						<% if counter >= 5 %>
