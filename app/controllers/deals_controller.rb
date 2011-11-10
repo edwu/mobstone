@@ -32,6 +32,8 @@ class DealsController < ApplicationController
     @sorted_milestones = @deal.milestones.sort{|a,b| b.people <=> a.people}
 
     @time_left = ((@deal.startdate.to_datetime.utc + @deal.duration - DateTime.now.utc) * 24 * 60).to_i
+    
+    @company = Company.find(@deal.company_id)
 
     respond_to do |format|
       format.html # show.html.erb
