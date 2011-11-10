@@ -693,6 +693,14 @@ div.two_column .right {
     margin-bottom: 20px;
 
 }
+
+
+#image img {
+    width: 220px;
+    height: 286px;
+
+
+}
 /*Thermometer----------*/
 
 #main-description {

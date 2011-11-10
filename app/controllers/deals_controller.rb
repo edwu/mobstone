@@ -125,20 +125,21 @@ class DealsController < ApplicationController
     @user = User.find(current_user.id)
     @user.credits -= @deal.org_price
     @voucher = @deal.vouchers.build(:user_id => current_user.id)
-    @company = Company.find(@deal.company_id)
-    @people = @deal.vouchers.count
-    @milestones = @deal.milestones
-
-
-    @max = @milestones.maximum('people')
-    @percentage = @people / (@max * 1.0)
-    @sorted_milestones = @deal.milestones.sort{|a,b| b.people <=> a.people}
 
 
    respond_to do |format|
-     if @voucher.save and @user.save
-       format.html { redirect_to(purchases_path, :flash => {:success => 'You have successfully purchased the deal!'}) }
+     if @voucher.save #and @user.save
+       format.html { redirect_to(purchases_user_path, :flash => {:success => 'You have successfully purchased the deal!'}) }
      else
+       @company = Company.find(@deal.company_id)
+        @people = @deal.vouchers.count
+        @milestones = @deal.milestones
+
+
+        @max = @milestones.maximum('people')
+        @percentage = @people / (@max * 1.0)
+        @sorted_milestones = @deal.milestones.sort{|a,b| b.people <=> a.people}
+
        format.html { render :action => "show" }
        format.xml  { render :xml => @deal.errors, :status => :unprocessable_entity }
      end
