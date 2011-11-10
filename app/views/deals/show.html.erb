@@ -84,8 +84,13 @@
 			<div id='main-description'>
 			  <%= image_tag @deal.image_url.to_s %>
 				<p>
-				  <b>Description:</b>
+				  <b>Product Description:</b>
 				  <%= @deal.description %>
+				</p>
+				
+				<p>
+				  <b>Company Description:</b>
+				  <%= @company.description %>
 				</p>
 			</div>
 			<div id="faq" style="padding-left:15px; font-family:Helvetica, Arial, sans-serif;">
