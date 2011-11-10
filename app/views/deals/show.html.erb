@@ -20,7 +20,7 @@
 			<script>
   jQuery(document).ready(
     function() {
-      milestone(<%=@percentage %>);
+      milestone(0);
        <% @sorted_milestones.each_with_index do |milestone, index| %>
         milestones(<%=index%>,<%= milestone.people / (@max * 1.0 )%>);
         <% end %>
@@ -33,6 +33,9 @@
 <div id="pageHead">
 </div>
 <div id="thermometer">
+  <div id = "black_bar">
+
+  </div>
   <div id = "people">
 
   </div>
