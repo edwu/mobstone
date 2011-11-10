@@ -20,7 +20,7 @@
 			<script>
   jQuery(document).ready(
     function() {
-      milestone(0);
+      milestone(<%= @percentage %>);
        <% @sorted_milestones.each_with_index do |milestone, index| %>
         milestones(<%=index%>,<%= milestone.people / (@max * 1.0 )%>);
         <% end %>
