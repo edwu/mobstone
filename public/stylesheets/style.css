@@ -1827,7 +1827,6 @@ ol#commentslist {
 
 .layer1 {
 margin: 0;
-width: 250px;
 padding-bottom: 60px;
 }
  
@@ -1858,3 +1857,30 @@ padding-bottom: 60px;
 #summary .data {
 	text-align:center;
 }
+
+#bid {
+	background-color: #8ab799;
+}
+
+#bid a {
+	color: #faf9f9;
+}
+
+#bury a {
+	color: black;
+}
+
+#bid a:hover {
+	text-decoration: none;
+}
+
+#bury a:hover {
+	text-decoration: none;
+}
+
+#purchase a:hover {
+	text-decoration: none;
+}
+
+
+
