@@ -20,7 +20,7 @@
 			<script>
   jQuery(document).ready(
     function() {
-      milestone(0);
+      milestone(<%= @percentage %>);
        <% @sorted_milestones.each_with_index do |milestone, index| %>
         milestones(<%=index%>,<%= milestone.people / (@max * 1.0 )%>);
         <% end %>
@@ -46,8 +46,8 @@
   </div>
     <% @sorted_milestones.each_with_index do |milestone, index| %>
        <div id="<%='milestone' + index.to_s%>">	  
-          <div class="left" style="padding-right:20px; font-family:Helvetica, Arial, sans-serif; font-size: 12px;">$<%= milestone.price %></div>
-         <div class="right" style="padding-left: 10px; font-family:Helvetica, Arial, sans-serif; font-size: 12px;"><%= milestone.people %> People</div>
+          <div class="left" style="padding-right:20px; font-family:Helvetica, Arial, sans-serif; font-size: 12px;">$<%= milestone.price %>&nbsp;&nbsp;</div>
+         <div class="right" style="padding-left: 10px; font-family:Helvetica, Arial, sans-serif; font-size: 12px;">&nbsp;&nbsp;<%= milestone.people %>&nbsp;People</div>
         </div>
     <% end %>
 </div>
@@ -58,8 +58,8 @@
 			<div  id='countDownTimer'>			
 			</div>
 			<div id="currentPrice" style="font-family:Helvetica, Arial, sans-serif; padding-top: 15px; padding-bottom:30px;">
-				<h1 style="line-height:0.75em; color:#7d7d7b;">Current Price:</h1>
-				<h2 style="text-align:center; line-height:0.75em; color:#7d7d7b;">$<%= @current_price %></h2>
+				<h2 style="line-height:1.75em; color:#7d7d7b; text-align:center">Current Price:</h2>
+				<h2 style="text-align:center; line-height:0.75em; color:#7d7d7b;">$<%= @deal.current_price()%></h2>
 			</div>
 			<div id="bid" width=50% style="border:2px solid;
 			border-radius:25px; font-family:Helvetica, Arial, sans-serif; font-size:24px; padding:10px 10px 10px 10px; background-color: black; font-color:#faf9f9; text-align:center; margin:auto; background-color: #8AB799">
