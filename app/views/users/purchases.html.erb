@@ -73,10 +73,10 @@
 				<% else %>
 				<% deal = Deal.find(voucher.deal_id) %>
 				<tr class="data">
-				<td class="data" valign="top">1</td>
-				<td class="data" valign="top">$<%= deal.org_price %></td>
-				<td class="data" valign="top"><%= voucher.id %></td>
-				<td class="data" align="center"><%= deal.description%></td>
+				<td class="data" valign="top"><% if !voucher.redeemed and deal.expired %>1<%end%></td>
+				<td class="data" valign="top"><% if !voucher.redeemed and deal.expired %>$<%= deal.org_price %><%end%></td>
+				<td class="data" valign="top"><% if !voucher.redeemed and deal.expired %><%= voucher.id %><%end%></td>
+				<td class="data" align="center"><% if !voucher.redeemed and deal.expired %><%= deal.description%><%end%></td>
 				</tr>
 				<% counter += 1 %>
 				<% end %>
@@ -101,17 +101,17 @@
 				<% else %>
 				<% deal = Deal.find(voucher.deal_id) %>
 				<tr class="data">
-				<td class="data" valign="top"><%= Company.find(deal.company_id).name %></td>
-				<td class="data" valign="top">$<%= deal.current_price() %></td>
-				<td class="data" valign="top">$<%= deal.org_price %></td>
-				<td class="data" valign="top"><%= deal.description%></td>
+				<td class="data" valign="top"><% if voucher.redeemed %><%= Company.find(deal.company_id).name %><% end %></td>
+				<td class="data" valign="top"><% if voucher.redeemed %>$<%= deal.current_price() %><% end %></td>
+				<td class="data" valign="top"><% if voucher.redeemed %>$<%= deal.org_price %><% end %></td>
+				<td class="data" valign="top"><% if voucher.redeemed %><%= deal.description%><% end %></td>
 				</tr>
 				<% counter += 1 %>
-				<% end %>
 				<% end %>
 				</table>
             </div>
         </li>
+		<% end %>
 		<% end %>
     </ol>
 <% unless is_company? %>

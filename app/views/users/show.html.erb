@@ -5,15 +5,8 @@
         <%= @user.name %>
       </h1>
     </td>
-    <td class="sidebar round">
-      <strong>Name</strong> <%= @user.name %><br />
-      <strong>URL</strong>  <%= link_to user_path(@user), @user %>
-    </td>
   </tr>
 </table>
-<p>Number of credits: <%= @user.credits %></p>
-<p> <a href="#">Purchase credits here.</a> </p>
-
-<p>Also put in the number of purchases he's made?</p>
-<p>Most recent purchase?</p>
-<p>Make this page look prettier</p>
+<p style="line-height:0.25em;"><h3>Number of credits: <%= @user.credits %></h3></p>
+<p style="line-height:0.25em;"><h3><a href="#">Purchase credits here.</a></h3></p>
+<p style="line-height:0.25em;"><h3>Recent <%= link_to "Purchases", purchases_path %></h3></p>
