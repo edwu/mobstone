@@ -58,8 +58,8 @@
 			<div  id='countDownTimer'>			
 			</div>
 			<div id="currentPrice" style="font-family:Helvetica, Arial, sans-serif; padding-top: 15px; padding-bottom:30px;">
-				<h2 style="line-height:1.75em; color:#7d7d7b; text-align:center">Current Price:</h2>
-				<h2 style="text-align:center; line-height:0.75em; color:#7d7d7b;">$<%= @deal.current_price()%></h2>
+				<h2 style="line-height:1.75em; color:#7d7d7b; text-align:center">Current Price: $<%= @deal.current_price()%></h2>
+
 			</div>
 			<div id="bid" width=50% style="border:2px solid;
 			border-radius:25px; font-family:Helvetica, Arial, sans-serif; font-size:24px; padding:10px 10px 10px 10px; background-color: black; font-color:#faf9f9; text-align:center; margin:auto; background-color: #8AB799">
@@ -70,7 +70,6 @@
 			<div id="bury" width=50% style="border:2px solid;
 			border-radius:25px; font-family:Helvetica, Arial, sans-serif; font-size:24px; padding:10px 10px 10px 10px; background-color: #f7f7f7; font-color:#faf9f9; text-align:center; margin:auto;">
 				<%= link_to 'Bury', popularity_decrease_deal_path(@deal) %>
-              <%= @deal.popularity %>
 			</div>
 			<div id="space" style="padding-bottom:30px;">
 			</div>
