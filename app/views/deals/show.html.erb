@@ -20,7 +20,7 @@
 			<script>
   jQuery(document).ready(
     function() {
-      milestone(0);
+      milestone(<%= @percentage %>);
        <% @sorted_milestones.each_with_index do |milestone, index| %>
         milestones(<%=index%>,<%= milestone.people / (@max * 1.0 )%>);
         <% end %>
@@ -63,13 +63,14 @@
 			</div>
 			<div id="bid" width=50% style="border:2px solid;
 			border-radius:25px; font-family:Helvetica, Arial, sans-serif; font-size:24px; padding:10px 10px 10px 10px; background-color: black; font-color:#faf9f9; text-align:center; margin:auto; background-color: #8AB799">
-				<%= link_to 'Bid', buy_deal_path(@deal) %>
+				<%= link_to 'Bid', popularity_increase_deal_path(@deal) %>
 			</div>
 			<div id="space" style="padding-bottom:30px;">
 			</div>
 			<div id="bury" width=50% style="border:2px solid;
 			border-radius:25px; font-family:Helvetica, Arial, sans-serif; font-size:24px; padding:10px 10px 10px 10px; background-color: #f7f7f7; font-color:#faf9f9; text-align:center; margin:auto;">
-				<%= link_to 'Bury', root_path %>
+				<%= link_to 'Bury', popularity_decrease_deal_path(@deal) %>
+              <%= @deal.popularity %>
 			</div>
 			<div id="space" style="padding-bottom:30px;">
 			</div>

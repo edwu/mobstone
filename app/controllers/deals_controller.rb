@@ -121,20 +121,43 @@ class DealsController < ApplicationController
   
   def execute_buy
     @deal = Deal.find(params[:id])
-    current_user.credits -= @deal.org_price
-    
+    @user = User.find(current_user.id)
+    @user.credits -= @deal.org_price
    @voucher = @deal.vouchers.build(:user_id => current_user.id)
     
    respond_to do |format|
-     if @voucher.save
-       format.html { redirect_to(purchases_path, :flash => {:success => 'You have successfully purchased the deal!.'}) }
+     if @voucher.save and @user.save
+       format.html { redirect_to(purchases_path, :flash => {:success => 'You have successfully purchased the deal!'}) }
      else
        format.html { render :action => "show" }
        format.xml  { render :xml => @deal.errors, :status => :unprocessable_entity }
      end
    end
   end
-end
+
+  def popularity_decrease
+    @deal = Deal.find(params[:id])
+    @deal.popularity -= 1
+    respond_to do |format|
+      if @deal.save
+        format.html { redirect_to(@deal, :flash => {:success => 'You have successfully buried!'}) }
+      else
+        format.html {render :action => "show"}
+      end
+    end
+  end
+
+  def popularity_increase
+    @deal = Deal.find(params[:id])
+    @deal.popularity += 1
+    respond_to do |format|
+      if @deal.save
+        format.html { redirect_to(@deal, :flash => {:success => 'You have successfully bidded!'}) }
+      else
+        format.html {render :action => "show"}
+      end
+    end
+  end
 
   private
     def correct_company   #if user not signed in, can still edit deals?
@@ -144,3 +167,5 @@ end
         redirect_to(root_path) unless current_company?(@company)
       end
     end
+end
+
