@@ -10,12 +10,15 @@ class Deal < ActiveRecord::Base
   
   def current_price
     number_bought = self.vouchers.count
-    sorted_milestones = self.milestones.sort{|a,b| b.people <=> a.people}
+    puts "numberbought:#{number_bought}"
+    sorted_milestones = self.milestones.sort{|a,b| a.people <=> b.people}
     
     previous_milestone = sorted_milestones[0]
   
     
     sorted_milestones.each do |milestone|
+      puts "# of people in milestone:#{milestone.people}"
+
       if number_bought > milestone.people
         previous_milestone = milestone
         end        
