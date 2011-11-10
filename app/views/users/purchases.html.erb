@@ -14,6 +14,7 @@
 				<td class="checkout">Original Price</td>
 				<td class="checkout">Voucher Code</td>
 				<td class="checkout">Redeemed</td>
+				<td class="checkout">Return to Deal</td>
 				</tr>
 				<% if is_company? %>
 					<% company = Company.where("user_id = #{current_user.id}")[0] %>
@@ -24,6 +25,7 @@
 							<td class="data" valign="top">$<%= deal.org_price %></td>
 							<td class="data" valign="top"><%= voucher.id %></td>
 							<td class="data" valign="top"><%= voucher.redeemed %></td>
+							<td class="data" valigh="top"><%= link_to 'Show Deal', deal_path(voucher.deal_id) %></td>
 						</tr>			
 					<% end %>
 				<% else is_company? %>
@@ -36,7 +38,7 @@
 						<tr class="data" valign="top">
 						<td class="data" valign="top"><%= deal.percent_reached()*100 %>%</td>
 						<td class="data" valign="top">$<%= deal.org_price %></td>
-						<td class="data" valign="top">1</td>
+						<td class="data" valign="top"><%= voucher.id %></td>
 						<td class="data" valign="top"><%= link_to 'Show Deal', deal_path(voucher.deal_id) %></td>
 						</tr>
 						<% counter += 1 %>				

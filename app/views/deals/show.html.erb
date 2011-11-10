@@ -44,8 +44,8 @@
     <% @sorted_milestones.each_with_index do |milestone, index| %>
        <div id="<%='milestone' + index.to_s%>">
 
-          <div class="left">Price: <%= milestone.price %></div>
-         <div class="right">People: <%= milestone.people %></div>
+          <div class="left">$<%= milestone.price %></div>
+         <div class="right"><%= milestone.people %> People</div>
         </div>
     <% end %>
 </div>
@@ -65,7 +65,7 @@
 			</div>
 			
 			<div class='user-actions'>
-				<%= button_to 'Bury', root_path%>
+				<%= link_to 'Bury', root_path, :class=> 'btn super-large'%>
 			</div>
 		</div>
 		<div class='col_6 last'>
