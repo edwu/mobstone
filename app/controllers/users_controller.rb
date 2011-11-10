@@ -14,6 +14,8 @@ class UsersController < ApplicationController
   def show
     @user = User.find(current_user.id)
     @title = "Profile"
+    
+    @company = Company.where(:user_id => @user.id).first
 
     respond_to do |format|
       format.html # show.html.erb
