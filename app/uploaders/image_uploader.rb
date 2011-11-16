@@ -9,9 +9,9 @@ class ImageUploader < CarrierWave::Uploader::Base
   # include CarrierWave::ImageScience
 
   # Choose what kind of storage to use for this uploader:
-  #storage :file
+  storage :file
   # storage :fog
-  storage :s3
+  #storage :s3
 
   def cache_dir
     "#{Rails.root}/tmp/uploads"
