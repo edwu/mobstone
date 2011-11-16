@@ -3,6 +3,10 @@ class Deal < ActiveRecord::Base
   has_many :milestones
   belongs_to :company
   has_many :users, :through => :vouchers
+  validates :duration, :presence => true
+  validates :image, :presence => true
+  validates :org_price, :presence => true
+  validates :min_price, :presence => true
 
   accepts_nested_attributes_for :milestones
   
