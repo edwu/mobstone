@@ -13,7 +13,7 @@ group :development do
 end
 # Use unicorn as the web server
 # gem 'unicorn'
-
+gem 'fog'
 gem 'mini_magick'
 gem 'carrierwave'
 # Deploy with Capistrano

@@ -7,8 +7,10 @@ class UsersController < ApplicationController
 
   def index
     @title = "All users"
+    @count = User.count
     @users = User.paginate(:page => params[:page])
   end
+
   # GET /users/1
   # GET /users/1.xml
   def show
@@ -52,7 +54,7 @@ class UsersController < ApplicationController
         @company.save
       end
       sign_in @user
-      flash[:success] = "Welcome to the Sample App!"
+      flash[:success] = "Welcome to Mobstone!"
       redirect_to @user
     else
       @title = "Sign up"

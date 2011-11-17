@@ -4,14 +4,14 @@ class ImageUploader < CarrierWave::Uploader::Base
 
 
   # Include RMagick or ImageScience support:
-  #include CarrierWave::RMagick
-   include CarrierWave::MiniMagick
+  # include CarrierWave::RMagick
+  #include CarrierWave::MiniMagick
   # include CarrierWave::ImageScience
 
   # Choose what kind of storage to use for this uploader:
-  storage :file
+  #storage :file
   # storage :fog
-  #storage :s3
+  storage :s3
 
   def cache_dir
     "#{Rails.root}/tmp/uploads"
@@ -30,7 +30,7 @@ class ImageUploader < CarrierWave::Uploader::Base
   # end
 
   # Process files as they are uploaded:
-   process :resize_to_limit => [200, 200]
+  #process :resize_to_limit => [200, 200]
   
   # def scale(width, height)
   #   # do something
