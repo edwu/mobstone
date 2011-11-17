@@ -23,7 +23,7 @@
 				<td class="checkout">Return to Deal</td>
 				</tr>
 				<% if is_company? %>
-					<% company = Company.where("user_id = #{current_user.id}")[0] %>
+					<% company = Company.where("user_id = #{current_user.id}")[0]  %>
 					<% Deal.where("company_id = #{company.id}")[0].vouchers.each do |voucher| %>
 						<% deal = Deal.find(voucher.deal_id) %>
 						<tr class="data" valign="top">
