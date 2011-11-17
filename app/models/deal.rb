@@ -14,17 +14,18 @@ class Deal < ActiveRecord::Base
     sorted_milestones = self.milestones.sort{|a,b| a.people <=> b.people}
     
     previous_milestone = sorted_milestones[0]
-  
+    price = self.org_price 
     
     sorted_milestones.each do |milestone|
-      puts "# of people in milestone:#{milestone.people}"
+      #puts "# of people in milestone:#{milestone.people}"
 
       if number_bought > milestone.people
         previous_milestone = milestone
+        price = previous_milestone.price
         end        
     end
     
-    return previous_milestone.price
+    return price 
        
   end
   
