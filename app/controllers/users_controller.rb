@@ -7,6 +7,7 @@ class UsersController < ApplicationController
 
   def index
     @title = "All users"
+    @count = User.count
     @users = User.paginate(:page => params[:page])
   end
   # GET /users/1
